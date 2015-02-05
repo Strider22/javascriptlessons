@@ -1,0 +1,47 @@
+<html>
+<!--Show how catching standard dom events. -->
+<!--from http://www.w3schools.com/jsref/dom_obj_event.asp-->
+<!--Modified basicResize.html-->
+
+<!--Set up the body to catch a window resize.-->
+<body onresize="windowResized()">
+
+<!--Code to handle the resize. The function can be put in the head section-->
+<script>
+    function windowResized(){
+        var w = window.outerWidth;
+        var h = window.outerHeight;
+        var txt="Window size: width = "+ w + ", height = " + h;
+        document.getElementById("windowSize").innerHTML=txt;
+    }
+    function paragraphClicked(event){
+        document.getElementById("paragraphStatus").innerHTML="Paragraph Clicked.";
+        document.getElementById("ctrlKeyStatus").innerHTML="ctrl key = " + event.ctrlKey;
+        document.getElementById("clientStatus").innerHTML="client location = " +
+                    event.clientX + ", " + event.clientY + "client size = " +
+                    event.clientWidth + ", " + event.clientHeight;
+        document.getElementById("ctrlKeyStatus").innerHTML="ctrl key = " + event.ctrlKey;
+        document.getElementById("screenStatus").innerHTML="screen location = " +
+                event.screenX + ", " + event.screenY + "screen size = " +
+                event.screenWidth + ", " + event.screenHeight;
+    }
+    function paragraphMouseOver(){
+        document.getElementById("paragraphStatus").innerHTML="Paragraph Mouse Over.";
+    }
+
+</script>
+
+<p onclick="paragraphClicked(event)" onmouseover="paragraphMouseOver()">
+    Resize the browser to see what happens.
+</p>
+
+<!--Create a dom element to hold text for the resize event.-->
+<p id="windowSize"></p>
+
+<p id="paragraphStatus"></p>
+<p id="ctrlKeyStatus"></p>
+<p id="clientStatus"></p>
+<p id="screenStatus"></p>
+</body>
+
+</html>

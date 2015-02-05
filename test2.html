@@ -1,0 +1,41 @@
+<html><body><pre><script>
+    function init() {
+        var name = "Mozilla";
+
+        function displayName() {
+            alert(name);
+        }
+        displayName();
+    }
+
+    function stand(){
+        document.writeln("standalone lala");
+    }
+
+    var Quo = function lala() {
+        document.write("lala");
+    };
+    var myFunction = function () {
+        document.write("myFunction");
+    };
+    function recursive(val) {
+        if (val < 1) {
+            return;
+        }
+        document.writeln("level " + val);
+        recursive(val - 1);
+    }
+    stand();
+    Quo();
+    recursive(3);
+    init();
+
+    //Equality
+    var x = 5;
+    document.writeln("x = 5");
+    document.writeln("x == '5' " + (x == "5"));
+    document.writeln("x === '5' " + (x === "5"));
+    document.writeln("x == 5 " + (x == 5));
+    document.writeln("x === 5 " + (x === 5));
+
+</script></pre></body></html>

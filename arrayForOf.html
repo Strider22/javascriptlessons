@@ -1,0 +1,36 @@
+<html><body>
+<script>
+
+    //Javascript does not really have arrays. They have objects that
+    //act like arrays so performance is slower than you might expect.
+
+    // See http://stackoverflow.com/questions/9329446/how-to-do-for-each-over-an-array-in-javascript
+    // See http://msdn.microsoft.com/en-us/library/ie/ff679980(v=vs.94).aspx
+    var months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May'
+    ];
+
+    document.write("months length " + months.length + "<br>");
+
+    /***************************************************************
+     *
+     *                          for of
+     *
+     *      Surprise, surprise, not supported by IE 11
+     ***************************************************************/
+    document.write("<br>for of<br>");
+    var value;
+
+    for(value of months){
+        document.write(value + "<br>");
+    }
+
+
+
+</script>
+
+</body></html>

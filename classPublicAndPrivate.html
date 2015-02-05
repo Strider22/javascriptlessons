@@ -1,0 +1,57 @@
+<html>
+<body>
+<script>
+    //Create a constructor for a basic object
+    function BasicObject(){
+        //This is assigned to that in the constructor to
+        //work around a poor specificiation in inner functions
+        //See http://www.crockford.com/javascript/private.html
+        that = this; //that is a private member
+        this.publicMember = "this operator makes it public";
+
+        this.privilegedMethod = function(){
+            document.write("In privilegedMethod" + "<br>");
+
+            //The following line will fail, publicMember is undefined
+            //document.write("publicMember = " + publicMember + "<br>");
+
+            //that is preferred because of inner methods
+            document.write("that.publicMember = " + that.publicMember + "<br>");
+            document.write("privileged methods can access private methods like: " + privateMethod() + "<br>");
+            document.write("privileged methods can access private members like: " + privateMember2() + "<br>");
+            var innerMethod = function(){
+                //Here's where we see the reason for "that" assignment
+                document.write("this.publicMember = " + this.publicMember + "<br>");
+                document.write("that.publicMember = " + that.publicMember + "<br>");
+            };
+            innerMethod();
+        };
+        function privateMethod(){
+            document.write("in private method" + "<br>");
+        }
+        //This is a private member, not a private method
+        privateMember2 = privateMethod;
+    }
+
+    BasicObject.prototype.publicMethod = function(){
+        document.write("In Public method")
+        document.write("that.publicMember = " + that.publicMember + "<br>");
+        //The following line will fail
+        //document.write("privileged methods cannot access private methods like: " + privateMethod() + "<br>");
+        document.write("privileged methods can access private members like: " + privateMember2() + "<br>");
+    };
+    //Create two separate instances of the object
+    var myObject = new BasicObject("myObject");
+    document.write("Accessing members" + "<br>");
+    document.write(myObject.publicMember + "<br>");
+    document.write(myObject.privateMember + "<br>");
+
+    document.write("Accessing methods"+ "<br>");
+    //Trying to access privateMethod will result in undefined error
+//    myObject.privateMethod();
+    myObject.privilegedMethod();
+    myObject.publicMethod();
+</script>
+
+</body>
+</html>

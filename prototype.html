@@ -1,0 +1,20 @@
+<html>
+<body>
+<script>
+    //Create a constructor for a basic object
+    function BasicObject(name){
+        this.member = 5;
+    }
+
+    //Add a public method, dump, on Basic object, via prototype
+    BasicObject.prototype.dump = function(){
+        document.write("Member value is " + this.member + "<br>");
+    };
+
+    //Create two separate instances of the object
+    var myObject = new BasicObject();
+    myObject.dump();
+</script>
+
+</body>
+</html>

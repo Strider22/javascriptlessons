@@ -1,0 +1,43 @@
+<html><body><pre><script>
+var add = function(a,b){
+    if (typeof a !== "number"|| typeof b !== "number"){
+        throw {
+            name:"Type error",
+            message: "add needs numbers"
+        }
+    }
+  return a + b;
+};
+
+var array = [5, 4];
+var sum = add.apply(null, array);
+
+document.writeln('hello' + sum);
+
+var Quo = function (string) {
+  this.status = string;
+};
+
+// Define get_status on all Quo prototypes
+Quo.prototype.get_status = function (){
+    return this.name;
+};
+
+var statusObject = {
+  name : 'A-OK'
+};
+
+var status = Quo.prototype.get_status.apply(statusObject);
+
+document.writeln(status);
+var tryException = function(){
+    try{
+        add("yes", "no");
+    }
+    catch (e) {
+        document.writeln(e.name + ":" + e.message);
+    }
+};
+tryException();
+
+</script></pre></body></html>

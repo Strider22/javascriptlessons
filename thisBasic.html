@@ -1,0 +1,30 @@
+<html><body><pre><script>
+  //http://www.sitepoint.com/what-is-this-in-javascript/
+  window.WhoAmI = "I'm the window object";
+  alert("In global scope: window.WhoAmI = " + window.WhoAmI);
+  alert("In global scope: this.WhoAmI = " + this.WhoAmI);
+  alert("In global scope: window === this = " + (window === this));
+  document.writeln(window.WhoAmI);
+
+  function TestThis(){
+    alert("In TestThis function: this.WhoAmI = " + this.WhoAmI);
+    alert("In TestThis function: window === this = " + (window === this));
+  }
+
+  TestThis();
+
+  function Test(){
+    this.WhoAmI = "I'm the Test object";
+    this.Check1 = function() {
+      alert("In Test.Check1: this.WhoAmI = " + this.WhoAmI);
+    };
+  }
+ 
+  Test.prototype.Check2 = function(){
+    alert("In Test.Check2: this.WhoAmI = " + this.WhoAmI);
+  };
+  var t = new Test();
+  alert("In global scope: this.WhoAmI = " + this.WhoAmI);
+  t.Check1();
+  t.Check2();
+</script></pre></body></html>

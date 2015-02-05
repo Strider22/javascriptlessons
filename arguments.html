@@ -1,0 +1,14 @@
+<html><body><pre><script>
+//http://odetocode.com/blogs/scott/archive/2007/07/05/function-apply-and-function-call-in-javascript.aspx
+
+function f(){
+  var message = "";
+  for(var i = 0;i< arguments.length; i++){
+    message += arguments[i];
+  }
+  document.writeln(message);
+}
+
+f("H", "e", "l", "l", "o");
+
+</script></pre></body></html>

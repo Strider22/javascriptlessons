@@ -1,0 +1,22 @@
+<html>
+<body>
+<script>
+    //    Create a constructor for a basic object
+    function BasicObject(){
+        this.member = 5;
+    }
+    //Create two separate instances of the object
+    var myObject = new BasicObject();
+    var secondObject = new BasicObject();
+
+    //Prove that the instances are separate
+    document.write(myObject.member + "<br>");
+    document.write(secondObject.member + "<br>");
+    secondObject.member = 12;
+    document.write("After change <br>");
+    document.write(myObject.member + "<br>");
+    document.write(secondObject.member + "<br>");
+</script>
+
+</body>
+</html>

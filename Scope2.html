@@ -1,0 +1,26 @@
+<html><body>
+<script>
+    function Car() {
+        var color;
+        var make;
+        var model;
+
+        /**
+         * @private
+         */
+        var specify = function(){
+            document.writeln(color + " " + make + " " + model);
+        };
+        this.getMake = function (  ) {
+            return make;
+        };
+    }
+
+    var myCar = new Car();
+    myCar.make = "Honda";
+    //myCar.specify();
+    document.writeln(myCar.getMake());
+
+</script>
+
+</body></html>

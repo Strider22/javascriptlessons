@@ -1,0 +1,13 @@
+<html><body><pre><script>
+    function request(value, response){
+        document.writeln(value);
+        response();
+    }
+    request("Hello", function(){
+        document.writeln("World!");
+    })
+    request("Goodbye", cruelResponse);
+    function cruelResponse(){
+        document.writeln("Cruel World!");
+    }
+</script></pre></body></html>

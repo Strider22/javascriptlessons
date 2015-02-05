@@ -1,0 +1,35 @@
+<html>
+<body>
+<script>
+    //Create a constructor for a basic object
+    function BasicObject(name){
+        this.name = name;
+        this.member = 5;
+        this.greeting = function(){
+            document.write("Hello my name is " + this.name + "<br>");
+        };
+    }
+
+    //Add a public method, dump, on Basic object, via prototype
+    BasicObject.prototype.dump = function(){
+        document.write("In Basic Object named '" + this.name + "', member is " + this.member + "<br>");
+    }
+
+    //Create two separate instances of the object
+    var myObject = new BasicObject();
+    var secondObject = new BasicObject("Second Object");
+
+    myObject.greeting();
+    secondObject.greeting();
+
+    //Prove that the instances are separate
+    myObject.dump();
+    secondObject.dump();
+    document.write("Changing second object to 12 <br>");
+    secondObject.member = 12;
+    myObject.dump();
+    secondObject.dump();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html><body>
+<script>
+
+    function monthSize (month) {
+        if (["September", "April", "June", "November"].indexOf(month) != -1) {
+            return 30;
+        } else if (["February"].indexOf(month) != -1) {
+            return 28;
+        }
+        return 31;
+    }
+
+    document.write("January has " + monthSize("January") + " days<br>");
+    document.write("February has " + monthSize("February") + " days<br>");
+    document.write("June has " + monthSize("June") + " days<br>");
+
+
+</script>
+
+</body></html>

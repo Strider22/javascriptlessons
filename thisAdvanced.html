@@ -1,0 +1,20 @@
+<html><body><pre><script>
+  //http://www.sitepoint.com/what-is-this-in-javascript/
+
+  //This pointer defined by the invoking context
+  function SetType(type) {
+    this.WhoAmI = "I'm the " + type + " object";
+  }
+
+  SetType("global scope");
+  document.writeln("this.WhoAmI = " + this.WhoAmI);
+
+  var newObject = {};
+  SetType.call(newObject, "newObject");
+  document.writeln("newObject.WhoAmI = " + newObject.WhoAmI);
+
+  var new2 = {};
+  SetType.apply(new2, ["new2"]);
+  document.writeln("new2.WhoAmI = " + new2.WhoAmI);
+
+</script></pre></body></html>

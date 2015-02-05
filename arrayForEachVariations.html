@@ -1,0 +1,138 @@
+<html><body>
+<script>
+
+    //Javascript does not really have arrays. They have objects that
+    //act like arrays so performance is slower than you might expect.
+
+    // See http://stackoverflow.com/questions/9329446/how-to-do-for-each-over-an-array-in-javascript
+    // See http://msdn.microsoft.com/en-us/library/ie/ff679980(v=vs.94).aspx
+    var months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May'
+    ];
+
+    var result;
+
+    document.write("months length " + months.length + "<br>");
+
+    /***************************************************************
+     *
+     *                          Basic forEach
+     *
+     ***************************************************************/
+    document.write("<br>forEach<br>");
+    months.forEach(function(item){
+        document.write(item + "<br>");
+    });
+
+    /***************************************************************
+     *
+     *                          forEach with index
+     *
+     ***************************************************************/
+    document.write("<br>forEach with index<br>");
+    months.forEach(function(item,index){
+        document.write("month at " + index + " is " + item + "<br>");
+    });
+
+    /***************************************************************
+     *
+     *                          every
+     *
+     * Every returns true if every item returns true.
+     * Can also be used for an early break.
+     * Continue until false, or continue as long as every item is true.
+     ***************************************************************/
+    document.write("<br>every <br>");
+    result = months.every(function(item){
+        if(item !== 'March'){
+            document.write(item + "<br>");
+            return true;
+        }
+        return false;
+    });
+
+    document.write("T/F - every item is not equal to March =>" + result + "<br>");
+
+    /***************************************************************
+     *
+     *                          some
+     *
+     * Some returns true if some item returns true.
+     * Can also be used for an early break.
+     * Continue until true, or continue until some item is true.
+     ***************************************************************/
+    document.write("<br>some <br>");
+    result = months.some(function(item){
+        if(item === 'March'){
+            return true;
+        }
+        document.write(item + "<br>");
+        return false;
+    });
+
+    document.write("T/F - some item is March =>" + result + "<br>");
+
+    /***************************************************************
+     *
+     *                          filter
+     *
+     ***************************************************************/
+    document.write("<br>filter <br>");
+    smallMonths = months.filter(function (month) {
+        if (["September", "April", "June", "November"].indexOf(month) != -1) {
+            return true;
+        } else if (["February"].indexOf(month) != -1) {
+            return true;
+        }
+        return false;
+    });
+
+    smallMonths.forEach(function(item){
+       document.write(item + " is a small month<br>");
+    });
+
+    /***************************************************************
+     *
+     *                          map
+     *
+     ***************************************************************/
+    document.write("<br>map <br>");
+    monthAndDays = months.map(function (month) {
+        var monthObj = {month:month};
+        if (["September", "April", "June", "November"].indexOf(month) != -1) {
+            monthObj.days = 30;
+        } else if (["February"].indexOf(month) != -1) {
+            monthObj.days = 28;
+        }else{
+            monthObj.days = 31;
+        }
+        return monthObj;
+    });
+
+    monthAndDays.forEach(function(month){
+        document.write(month.month + " has " + month.days + " days<br>");
+    });
+
+    /***************************************************************
+     *
+     *                          reduce
+     *
+     ***************************************************************/
+    //reduce does not require map to run first in general, but in this
+    //example we expect map to have been run.
+    document.write("<br>reduce <br>");
+    document.write("sum of days = " + monthAndDays.reduce(function (previous,current) {
+                return previous + current.days;
+            },0) + "<br>");
+
+
+
+
+
+</script>
+
+</body></html>

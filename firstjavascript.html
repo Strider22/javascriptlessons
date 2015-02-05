@@ -1,0 +1,25 @@
+<h1>JavaScript</h1>
+
+
+<INPUT TYPE= "button" NAME="JS" VALUE="JavaScript"
+	onclick="js()">
+
+<select NAME="Select1">
+<option VALUE = "Choice1" SELECTED > first choice.
+<option VALUE = "Choice2" > second choice.
+<option VALUE = "Choice3" > third choice.
+</select>
+<br>
+
+
+<SCRIPT LANGUAGE = "JAVASCRIPT">
+function js()
+{
+//  alert("this is JavaScript" + document.Select1.value);
+result = "document.Select1.value";
+}
+
+
+document.write(document.getElementByID("Select1").value);
+
+</SCRIPT>

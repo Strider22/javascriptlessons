@@ -1,0 +1,18 @@
+<html><body><pre><script>
+    //Move N discs from src to dst with the help of the aux post
+    //Discs are numbered from 1 to N with 1 being the smallest and N the largest
+    var hanoi = function hanoi(disc, src, dst, aux) {
+        if (disc > 0) {
+            //move everyting above this disc from src to aux post, using dst as helper
+            hanoi(disc - 1, src, aux, dst);
+            //move the bottom disc from src to dst
+            document.writeln('Move disc ' + disc +
+                    ' from ' + src + ' to ' + dst);
+            //move the stack that was on top of disc, from aux to dst, using src as helper
+            hanoi(disc - 1, aux, dst, src);
+        }
+    };
+
+    hanoi(3, 'Src', 'Dst', 'Aux');
+
+</script></pre></body></html>

@@ -1,0 +1,47 @@
+<html><body>
+<script>
+
+    var myObject = {
+        'name': "Bob",
+        age : "35",     //quotes are not needed for well formed property names
+        gender: "Male",
+        myFunction: function(){ document.writeln("Hellow there")}
+    };
+
+    /***************************************************************
+     *
+     *                          simple object iteration
+     *                          property order is not guaranteed
+     *
+     ***************************************************************/
+    var simpleIteration = function(object){
+        for(propertyName in object){
+            document.writeln(propertyName + " : " + object[propertyName] + "<br>");
+        }
+    }
+
+    /***************************************************************
+     *
+     *                          object iteration: ignore functions
+     *                          property order is not guaranteed
+     *
+     ***************************************************************/
+    var ignoreFunctionIteration = function(object){
+        for(propertyName in object){
+            if(typeof myObject[propertyName] !== 'function'){
+                document.writeln(propertyName + " : " + object[propertyName] + "<br>");
+            }
+        }
+    }
+
+    /***************************************************************
+     *
+     *                          main body
+     *
+     ***************************************************************/
+    simpleIteration(myObject);
+    ignoreFunctionIteration(myObject);
+
+</script>
+
+</body></html>

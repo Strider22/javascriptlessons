@@ -1,0 +1,29 @@
+<html><body><pre><script>
+//http://odetocode.com/blogs/scott/archive/2007/07/05/function-apply-and-function-call-in-javascript.aspx
+//Functions stand on their own
+//Methods are functions within an object dictionary
+
+var o = {x: 5};
+
+function showX(message){
+  document.writeln(message + this.x);
+}
+
+function squareX(message1, message2){
+  document.writeln(message1 + (this.x * this.x) + message2);
+}
+
+function g(object, func){
+  //understand arguments identifier
+
+  var args = [];
+  for(var i = 2; i< arguments.length; i++){
+    args.push(arguments[i]);
+  }
+  func.apply(object, args);
+}
+
+g(o,showX,"The value of x = ");
+g(o,squareX,"The value of x squared = ", " Wow!"); 
+
+</script></pre></body></html>

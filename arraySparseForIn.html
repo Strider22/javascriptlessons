@@ -1,0 +1,48 @@
+<html><body>
+<script>
+
+    //Javascript does not really have arrays. They have objects that
+    //act like arrays so performance is slower than you might expect.
+
+    // See http://stackoverflow.com/questions/9329446/how-to-do-for-each-over-an-array-in-javascript
+    // See http://msdn.microsoft.com/en-us/library/ie/ff679980(v=vs.94).aspx
+    var months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May'
+    ];
+
+    document.write("months length " + months.length + "<br>");
+
+    /***************************************************************
+     *
+     *                          spare array for in
+     *
+     ***************************************************************/
+    document.write("<br>sparse array <br>");
+    function arrayHasOwnIndex(myArray, property){
+        return myArray.hasOwnProperty(property) && /^0$|^[1-9]\d*$/.test(property)&&
+                property <= 4294967294;
+    }
+
+
+    var index;
+    var myArray = [];
+    myArray[3] = "Hello ";
+    myArray[186] = "World ";
+    myArray[10004] = "Wa's up?";
+
+    for(index in myArray){
+        document.write("in the loop - ");
+        if(arrayHasOwnIndex(myArray, index)){
+            document.write(myArray[index])
+        }
+        document.write("<br>");
+    }
+
+
+</script>
+
+</body></html>

@@ -1,0 +1,26 @@
+<html>
+<!--Show how to catch a standard dom resize event. -->
+<!--from http://www.w3schools.com/jsref/dom_obj_event.asp-->
+
+<!--Set up the body to catch a window resize.-->
+<body onresize="windowResized()">
+
+<!--Code to handle the resize. The function can be put in the head section-->
+<script>
+    function windowResized(){
+        var w = window.outerWidth;
+        var h = window.outerHeight;
+        var txt="In " + this + " Window size: width = "+ w + ", height = " + h;
+        document.getElementById("windowSize").innerHTML=txt;
+    }
+
+</script>
+
+<p>Resize the browser to see what happens.</p>
+
+<!--Create a dom element to hold text for the resize event.-->
+<p id="windowSize"></p>
+
+</body>
+
+</html>
