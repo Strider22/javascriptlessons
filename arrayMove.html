@@ -1,0 +1,76 @@
+<html>
+<body>
+<script>
+    //    http://stackoverflow.com/questions/2440700/reordering-arrays
+
+    var person = [
+        'name',
+        'age',
+        'gender',
+        'hobby',
+        'favoriteMovie'
+    ];
+
+    //    person array is too trivial to be of real value, but is easy to illustrate
+    //    In reality person array would be more complex and order is just an ordered
+    //    list of column headings
+    var order1 = [
+        'name',
+        'gender',
+        'hobby',
+        'age',
+        'favoriteMovie'
+    ];
+    var order2 = [
+        'favoriteMovie',
+        'name',
+        'age',
+        'gender',
+        'hobby'
+    ];
+    var order3 = [
+        'gender',
+        'favoriteMovie',
+        'age',
+        'name',
+        'hobby',
+        'name'
+    ];
+    //Mismatched columns. Reorder should
+    //- force missing items to the end
+    //- skip, but warn about extra items
+    var order4 = [
+        'gender',
+        'height',
+        'hobby',
+        'weight',
+        'name'
+    ];
+
+
+    document.write("<br>before move<br>");
+    person.forEach(function (item) {
+        document.write(item + "<br>");
+    });
+
+    function move(myArray,from,to){
+        myArray.splice(to,0,myArray.splice(from,1)[0]);
+    }
+
+
+    //move the second element
+    move(person, 3,0);
+//    for(i = 0;i < person.length;i++){
+//        var newPosition =
+//    }
+
+    document.write("<br>after move<br>");
+    person.forEach(function (item) {
+        document.write(item + "<br>");
+    });
+
+
+</script>
+
+</body>
+</html>

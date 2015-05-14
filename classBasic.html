@@ -1,34 +1,19 @@
 <html>
+<!--Port of the standard geometric object example for classes/inheritance-->
 <body>
+<script src = "object2D.js"></script>
 <script>
-    //Create a constructor for a basic object
-    function BasicObject(name){
-        this.name = name;
-        this.member = 5;
-        this.greeting = function(){
-            document.write("Hello my name is " + this.name + "<br>");
-        };
-    }
-
-    //Add a public method, dump, on Basic object, via prototype
-    BasicObject.prototype.dump = function(){
-        document.write("In Basic Object named '" + this.name + "', member is " + this.member + "<br>");
-    }
-
     //Create two separate instances of the object
-    var myObject = new BasicObject();
-    var secondObject = new BasicObject("Second Object");
+    var object1 = new Object2D("object1", 0,0);
+    var object2 = new Object2D("object2", 10,10);
 
-    myObject.greeting();
-    secondObject.greeting();
+    object1.dump();
+    object2.dump();
 
-    //Prove that the instances are separate
-    myObject.dump();
-    secondObject.dump();
-    document.write("Changing second object to 12 <br>");
-    secondObject.member = 12;
-    myObject.dump();
-    secondObject.dump();
+    object2.move(7,2);
+
+    object1.dump();
+    object2.dump();
 </script>
 
 </body>

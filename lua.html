@@ -1,0 +1,14 @@
+<html>
+<!--calling lua from javascript-->
+<!-- http://moonshinejs.org/getting-started/ -->
+<!-- may need to have this run against a tomcat server -->
+
+<body>
+<script src = "./moonshineVM/vm/moonshine.js"></script>
+<script>
+    var vm = new shine.VM();
+    vm.load('./lua/hello.lua.json');
+</script>
+
+</body>
+</html>

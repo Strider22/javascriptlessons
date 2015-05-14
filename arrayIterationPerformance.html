@@ -1,0 +1,124 @@
+<html><body>
+<script>
+    //Best way to iterate a list
+
+    //This is a very good example to show a couple of things
+    //      - don't trust everything you read on the net
+    //      - browsers do different things
+    //      - standard loop is fine
+    //      - all loop methods are roughly equal
+    //      - be very careful what you conclude regarding performance. 
+
+    // NOTE: Move each test around and you'll get performance differences
+    // of around 50% or more in Chrome.
+    // Demonstrating this is why I have copies of the same procedure in
+    // different places.
+    // Hypothetically this could be a garbage collection issue.
+
+
+    //The results look quite fishy
+    //    http://jsperf.com/caching-array-length/4
+    // http://jsperf.com/testing-foreach-vs-for-loop/69
+    // See http://stackoverflow.com/questions/9329446/how-to-do-for-each-over-an-array-in-javascript
+    // See http://msdn.microsoft.com/en-us/library/ie/ff679980(v=vs.94).aspx
+    var months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May'
+    ];
+
+    var x = "";
+    var y = 0;
+    var numIterations = 10000;
+    var start, end, time;
+
+    start = performance.now();
+    for(var iteration = 0; iteration < numIterations; iteration++){
+        var myLen = months.length;
+        for(var i = 0; i < myLen ; i++){
+            x = months[i];
+            y = i;
+        }
+    }
+    end = performance.now();
+    document.write("<br>precalc len time: " + (end - start));
+
+    start = performance.now();
+    for(var iteration = 0; iteration < numIterations; iteration++){
+        for(var i = 0; i < months.length; i++){
+            x = months[i];
+            y = i;
+        }
+    }
+    end = performance.now();
+    document.write("<br>standard for time: " + (end - start));
+
+    start = performance.now();
+    for(var iteration = 0; iteration < numIterations; iteration++){
+        for(var i = 0; i < months.length; i++){
+            x = months[i];
+            y = i;
+        }
+    }
+    end = performance.now();
+    document.write("<br>standard for time: " + (end - start));
+
+    start = performance.now();
+    for(var iteration = 0; iteration < numIterations; iteration++){
+        var myLen = months.length;
+        for(var i = 0; i < myLen ; i++){
+            x = months[i];
+            y = i;
+        }
+    }
+    end = performance.now();
+    document.write("<br>precalc len time: " + (end - start));
+
+    start = performance.now();
+    for(var iteration = 0; iteration < numIterations; iteration++){
+        months.forEach(function (element, index) {
+                    x = element;
+                    y = index;
+                }
+        );
+    }
+    end = performance.now();
+    document.write("<br>forEach time: " + (end - start));
+
+    start = performance.now();
+    for(var iteration = 0; iteration < numIterations; iteration++){
+        for(var i = 0,len=months.length; i < len; i++){
+            x = months[i];
+            y = i;
+        }
+    }
+    end = performance.now();
+    document.write("<br>for with cache time: " + (end - start));
+
+
+    start = performance.now();
+        for(var iteration = 0; iteration < numIterations; iteration++){
+        for (var i = 0, loopx; loopx = months[i]; ++i) {
+            x = loopx;
+            y = i
+        }
+    }
+    end = performance.now();
+    document.write("<br>.net Emulation time: " + (end - start));
+
+    start = performance.now();
+    for(var iteration = 0; iteration < numIterations; iteration++){
+        for(var i = 0; i < months.length; i++){
+            x = months[i];
+            y = i;
+        }
+    }
+    end = performance.now();
+    document.write("<br>standard for time: " + (end - start));
+
+
+</script>
+
+</body></html>

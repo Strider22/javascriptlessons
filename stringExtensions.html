@@ -1,0 +1,43 @@
+<html><body>
+<script>
+
+    String.prototype.tokenize = function() {
+        var tokenized = this;
+
+        // iterate over the arguments and replace the placeholders
+        for (var i = 0; i < arguments.length; i++) {
+            tokenized = tokenized.replace("%" + i, arguments[i]);
+        }
+
+        return tokenized;
+    };
+
+    if (typeof String.prototype.startsWith != 'function') {
+        String.prototype.startsWith = function (str){
+            return this.slice(0, str.length) == str;
+        };
+    }
+
+    if (typeof String.prototype.capitalize != 'function') {
+        String.prototype.capitalize = function() {
+            return this.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
+                return a.toUpperCase();
+            });
+        };
+    }
+    
+    var myString = 'hello %0'.tokenize("World");
+
+    document.write(myString + "<br>");
+
+    if(myString.startsWith("hello")){
+        document.write("This starts with \'hello\'<br>");
+    }else{
+        document.write("This doesn\'t start with \'hello\'<br>");
+    }
+
+    document.write("Capitalized = " + myString.capitalize());
+
+</script>
+
+</body></html>

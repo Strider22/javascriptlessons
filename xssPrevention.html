@@ -1,0 +1,45 @@
+<h1>Alert</h1>
+Simple example to display an alert box.
+
+
+<script>
+
+    //XSS example
+    document.write("\<script\>alert('hello');\<\/script\>");
+
+
+    //Escaped HTML
+    function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    }
+    document.write(escapeHtml("\<script\>alert('hello');\<\/script\>"));
+
+
+    var malScript ="');window.setInterval('some evil script";
+
+    j = "<%=malScript%>";
+    alert(j);
+
+
+
+
+    //Removed script
+    function removeScript(str){
+//        document.write(str.bold());
+//        document.write($(str.bold()));
+        var html = $(str.bold());
+        html.find('script').remove();
+        return html.html();
+    }
+    document.write(removeScript("\<script\>alert('hello');\<\/script\>"));
+
+
+
+
+
+    var string = "<script>alert('hello');</script>"
+</script>
+
+<div><%=escapeforHTML(string)%></div>

@@ -1,0 +1,23 @@
+<html>
+<!--Simple interpolation calculation-->
+<!-- http://stackoverflow.com/questions/4353525/floating-point-linear-interpolation -->
+<body>
+<script src = "../object2D.js"></script>
+<script>
+    //The interpolated value lies distance "fraction" from
+    //value1 to value2
+    function interpolate(value1, value2, fraction){
+        return (value1 * (1.0 - fraction)) + (value2 * fraction);
+    }
+
+    function dump(val){
+        document.write(val + "<br>");
+    }
+
+    dump(interpolate(10,20,.5));
+    dump(interpolate(10,20,.1));
+    dump(interpolate(-100.245,100.245,.5 ));
+</script>
+
+</body>
+</html>

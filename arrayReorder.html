@@ -1,0 +1,99 @@
+<html>
+<body>
+<script>
+    //    http://stackoverflow.com/questions/2440700/reordering-arrays
+
+    var person = [
+        'name',
+        'age',
+        'gender',
+        'hobby',
+        'favoriteMovie'
+    ];
+
+    //    person array is too trivial to be of real value, but is easy to illustrate
+    //    In reality person array would be more complex and order is just an ordered
+    //    list of column headings
+    var order1 = [
+        'name',
+        'gender',
+        'hobby',
+        'age',
+        'favoriteMovie'
+    ];
+    var order2 = [
+        'favoriteMovie',
+        'name',
+        'age',
+        'gender',
+        'hobby'
+    ];
+    var order3 = [
+        'gender',
+        'favoriteMovie',
+        'age',
+        'name',
+        'hobby',
+    ];
+    //Mismatched columns. Reorder should
+    //- force missing items to the end
+    //- skip, but warn about extra items
+    var order4 = [
+        'gender',
+        'height',
+        'hobby',
+        'weight',
+        'name'
+    ];
+
+    var blankLine = function(){
+        document.write("<br>");
+    }
+    var dump = function(array){
+        array.forEach(function (item) {
+            document.write(item + "<br>");
+        });
+    }
+
+    var move = function(myArray,from,to){
+        myArray.splice(to,0,myArray.splice(from,1)[0]);
+    }
+
+    var reorder = function(array, order){
+        var arrayIndex = 0;
+        for(var i=0;i< order.length;i++){
+            var currentLocation = array.indexOf(order[i],arrayIndex);
+            if(currentLocation < 0){
+                document.write("<br>" + order[i]+ " not found");
+            }else if(currentLocation == arrayIndex){
+                arrayIndex++;
+            }else{
+                move(array,currentLocation,arrayIndex);
+                arrayIndex++;
+            }
+        }
+    }
+
+    dump(person);
+
+    reorder(person,order1);
+    blankLine();
+    dump(person);
+
+    reorder(person,order2);
+    blankLine();
+    dump(person);
+
+    reorder(person,order3);
+    blankLine();
+    dump(person);
+
+    reorder(person,order4);
+    blankLine();
+    dump(person);
+
+
+</script>
+
+</body>
+</html>
