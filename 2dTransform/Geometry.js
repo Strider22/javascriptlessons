@@ -4,6 +4,13 @@ function Point(){
     this.x = 0;
     this.y = 0;
     this.z = 0;
+
+    this.dump = function(heading){
+        if(heading){
+            document.write(heading + "<br>");
+        }
+        document.write(this.x + " " + this.y + " " + this.z + "<br>");
+    };
 }
 
 /**
@@ -27,12 +34,16 @@ Point.interpolate = function (point1, point2, fraction) {
  */
 function VectorShape(){
     this.points = [];
-    this.dump = function(){
+    this.dump = function(heading){
+        if(heading){
+            document.write(heading + "<br>");
+        }
         document.write("points <br>");
         this.points.forEach(function(item){
-            document.write(item.x + " " + item.y + " " + item.z + "<br>");
+            item.dump();
         });
     };
+
     this.addPoint = function(x, y, z){
         var point = new Point();
         point.x = x||0; point.y = y||0; point.z =z||0;

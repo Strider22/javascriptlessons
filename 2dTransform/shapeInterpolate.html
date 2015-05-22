@@ -3,6 +3,7 @@
 <body>
 <script src = "Geometry.js"></script>
 <script src = "MathUtils.js"></script>
+<script src = "GeneralUtils.js"></script>
 <script>
     //Create two separate instances of the object
     var initialShape = new VectorShape();
@@ -20,7 +21,11 @@
     //NEED TO CREATE A POINT CLASS
     var interpolatedShape = VectorShape.interpolate(initialShape, shiftedShape,.5);
 
-    interpolatedShape.dump();
+    initialShape.dump('initialShape');
+    blankLine();
+    shiftedShape.dump('shiftedShape');
+    blankLine();
+    interpolatedShape.dump('interpolatedShape');
 
 </script>
 
