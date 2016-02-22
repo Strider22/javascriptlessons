@@ -1,0 +1,60 @@
+<h1>Leaflet example</h1>
+<!-- http://leafletjs.com/examples/quick-start.html-->
+
+<br>
+
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"/>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+<div id="map"></div>
+<style>
+	#map{height:780px;}
+</style>
+<script language = "javascript">
+    //L is defined in leaflet
+    var map = L.map('map').setView([51.505, -0.09], 13);
+    //Doesn't work. Don't yet know how to set the parameters.
+//    L.tileLayer('http://opnsta.sas.com/mq_lite/{z}/{x}/{y}.png/{c}',
+//            {
+//                maxZoom: 18
+//            }).addTo(map);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
+            {
+                maxZoom: 18,
+                id: 'strider79.2a7533f9',
+                accessToken: 'pk.eyJ1Ijoic3RyaWRlcjc5IiwiYSI6IjI3Y2U5YmQ0YzVhYzBlOGZiNDU2ZmE3YTk2Y2NiZGQzIn0.oJsCe57PSuJSeYkivOeesg'
+            }).addTo(map);
+
+
+    //Blue pushpin type of symbol
+    var marker = L.marker([51.5, -0.09]).addTo(map);
+
+    //Circle around marker
+    var circle = L.circle([51.5, -0.09], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(map);
+
+    //Blue polygon
+    var polygon = L.polygon([
+        [51.509, -0.08],
+        [51.503, -0.06],
+        [51.51, -0.047]
+    ]).addTo(map);
+
+    //Add Popups
+    marker.bindPopup("<b>Key point of interest</b>").openPopup();
+    circle.bindPopup("Area of interest");
+    polygon.bindPopup("Polygon");
+
+    //Standalone popups
+    var popup = L.popup().setLatLng([51.52, -0.101]).setContent("I am a standalone popup.").openOn(map);
+
+    var clickPopup = L.popup();
+    function onMapClick(e){
+        clickPopup.setLatLng(e.latlng).setContent("You've clicked the map at " + e.latlng).openOn(map);
+    }
+    map.on('click',onMapClick);
+
+</script>

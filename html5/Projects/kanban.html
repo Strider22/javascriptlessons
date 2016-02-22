@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <title>Kanban</title>
+ </head>
+ 
+<body>
+
+<canvas id="myCanvas" width="1000" height="700" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+
+
+<script>
+function drawRandomStickies(ctx, id, text, numStickies, x, y, w, h, ySpacing)
+{
+  //Draw
+  for(var i=0;i<numStickies;i++)
+  {
+    drawSticky(ctx,id,text,x,y+(i*(h+ySpacing)),w,h);
+  }
+}
+
+function drawSticky(ctx, id, text, x, y, w, h)
+{  
+var gradiant=ctx.createLinearGradient(x,y+h/4,x,y+h);
+gradiant.addColorStop(0,"#FFFFCC");
+gradiant.addColorStop(1,"#FFFF99");
+
+ctx.fillStyle="#F8F8AA"; 
+ctx.fillRect(x,y,w,h/5);
+ctx.fillStyle=gradiant;
+ctx.fillRect(x,y+h/5,w,4*h/5);
+ctx.fillStyle="#000000"; 
+ctx.fillText(id,x + 10,y+15);
+ctx.fillText(text,x + 10,y+h/5+20);
+}
+
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var investigatingX = 20;
+var implementingX = 220;
+var testingX = 470;
+var doneX = 820;
+var noteStartY = 70;
+var noteWidth = 150;
+var noteHeight = 100;
+var noteYSpacing = 10;
+var headingY = 50;
+
+//Text
+ctx.fillStyle="#000000";
+ctx.font="30px Arial";
+ctx.fillText("ODA Kanban Board",400,30);
+ctx.font="15px Arial";
+ctx.fillText("Investigating",50,headingY);
+ctx.fillText("Implementing",250,headingY);
+ctx.fillText("Testing",500,headingY);
+ctx.fillText("Done",850,headingY);
+
+ctx.strokeStyle="#000000";
+ctx.moveTo(0,60);
+ctx.lineTo(1000,60);
+ctx.moveTo(750,60);
+ctx.lineTo(750,700);
+ctx.moveTo(760,60);
+ctx.lineTo(760,700);
+ctx.stroke();
+
+
+  drawRandomStickies(ctx,"S0123456","My Defect text", 4, investigatingX, noteStartY, noteWidth, noteHeight, noteYSpacing);
+  drawRandomStickies(ctx,"S0989741","Working on it", 2, implementingX, noteStartY, noteWidth, noteHeight, noteYSpacing);
+  drawRandomStickies(ctx,"S0294783","IOM fails", 1, testingX, noteStartY, noteWidth, noteHeight, noteYSpacing);
+  drawRandomStickies(ctx,"S0982783","JDBC NLS", 5, doneX, noteStartY, noteWidth, noteHeight, noteYSpacing);
+
+</script>
+
+</body>
+ 
+</html> 

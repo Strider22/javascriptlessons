@@ -1,0 +1,22 @@
+<!--Stores information associated with "myKey" to local storage.
+Intended to be used with localStorageGet.html
+This demonstrates persistence between sessions
+-->
+<html>
+<body>
+<!-- From http://diveintohtml5.info/storage.html -->
+
+<script>
+    //Check to see if local storage is supported
+    try {
+        'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        document.write("local Storage is not supported with this browser" + "<br>");
+    }
+
+    localStorage.setItem("myKey", "Hello World");
+    document.write("'Hello World' has been written to 'myKey'" + "<br>");
+</script>
+
+</body>
+</html>

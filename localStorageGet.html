@@ -1,0 +1,24 @@
+<!--Retrieves information associated with "myKey" from local storage.
+This demonstrates persistence between sessions
+-->
+<html>
+<body>
+<!-- From http://diveintohtml5.info/storage.html -->
+
+<script>
+    var dumpString = function (string) {
+        document.write(string + "<br>");
+    };
+    //Check to see if local storage is supported
+    try {
+        'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        dumpString("local Storage is not supported with this browser");
+    }
+
+    //Retrieve info
+    dumpString("Info stored at 'myKey' is: " + localStorage["myKey"]);
+</script>
+
+</body>
+</html>

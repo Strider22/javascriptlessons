@@ -1,0 +1,44 @@
+<html>
+<!--
+Based on prototype.html, but similar to inheritancePseudoclassical.html
+
+See also Javascript the good parts
+-->
+<body>
+<script>
+
+    //***************************************************************
+    // Create a concrete object, person1
+    //***************************************************************
+    var person1 = {
+        name: "Joe",
+        info: function(){
+            document.write("Person name: " + this.name + "<br>");
+        },
+        sayHello: function(){
+            document.write("Hello! <br>");
+        }
+    };
+
+    //***************************************************************
+    // Create a concrete object, person2, that inherits from person1
+    //***************************************************************
+    var person2 = Object.create(person1);
+    person2.name = "Tom";
+    person2.job = "Programmer";
+    person2.getJob = function(){
+            return this.job;
+    };
+
+
+    //***************************************************************
+    // Use the instance
+    //***************************************************************
+    person1.info();
+    person1.sayHello();
+    document.write(person2.name + " is a " + person2.getJob());
+
+</script>
+
+</body>
+</html>

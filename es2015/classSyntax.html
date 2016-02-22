@@ -1,0 +1,39 @@
+<h1>es2015</h1>
+
+
+<script>
+	//use strict mode to support es2015
+	//https://msdn.microsoft.com/en-us/library/br230269(v=vs.94).aspx
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+	"use strict";
+
+    //OldStyle allowing that to be known
+//    function Bear(name){
+//        this.type = "Bear";
+//        this.name = name;
+//        var that = this;
+//        setTimeout(function(){
+//            document.write("I'm a " + that.type + " named " + that.name);
+//        },1000);
+//    }
+
+    //es2015 arrow syntax
+    class Bear{
+        constructor(name){
+            this.type = "Bear";
+            this.name = name;
+            var that = this;
+            setTimeout(() => {
+                document.write("I'm a " + this.type + " named " + this.name);
+            },1000);
+        }
+    }
+
+    var myBear = new Bear("Bob");
+
+
+</script>
+
+
+
+</SCRIPT>

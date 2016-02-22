@@ -1,0 +1,31 @@
+<h1>es2015</h1>
+
+<!-- Destructuring allows you to convert to and from objects from variables-->
+
+<script>
+	//use strict mode to support es2015
+	//https://msdn.microsoft.com/en-us/library/br230269(v=vs.94).aspx
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+	"use strict";
+
+    // Taken from https://www.youtube.com/watch?v=CozSF5abcTA
+    let bear = 'grizzly';
+    let says = 'growl';
+
+    //Old way
+//    var myBear = {bear: bear, says: says};
+    //New way
+    let myBear = {bear,says};
+
+    //Old way
+    var var1 = myBear.bear;
+    var var2 = myBear.says;
+
+    //New way. Doesn't yet work in Chrome or FF
+//    let {var1, var2} = myBear;
+
+    document.write("The " + myBear.bear + " says " + myBear.says + "<br>");
+    document.write("var1 " + var1 + " var2 " + var2);
+
+</script>
+

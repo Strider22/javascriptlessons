@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>output pdf</title>
+    <script src="jspdf.js"></script>
+    <!-- prevent the image from displaying as a
+    standard html element -->
+    <style> img.hidden {display:none;} </style>
+
+</head>
+
+<body>
+
+<canvas id="myCanvas" width="1000" height="700" style="border:1px solid #c3c3c3;"></canvas>
+<img class="hidden" id="butterfly" src="butterfly.jpg"/>
+
+
+<script>
+
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    var myImage = document.getElementById("butterfly");
+    //Alternative way of getting the image
+    //var myImage= new Image();
+    //myImage.src = "butterfly.jpg";
+
+    var createRectangles = function (ctx) {
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 150, 80);
+
+        ctx.fillStyle = "#0000FF";
+        ctx.fillRect(150, 0, 150, 80);
+    };
+
+    var createLinesAndCurves = function (ctx) {
+        ctx.moveTo(400, 40);
+        ctx.lineTo(600, 40);
+        ctx.stroke();
+
+        ctx.moveTo(500, 30);
+        ctx.lineTo(500, 50);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(500, 40, 30, 0, 2 * Math.PI);
+        ctx.stroke();
+
+    };
+    var createText = function (ctx) {
+        ctx.fillStyle = "#00FF00";
+        ctx.strokeStyle = "#FF00FF";
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello World", 700, 30);
+        ctx.strokeText("Hello Outline", 700, 70);
+
+    };
+
+    var createImage = function (ctx) {
+        //Images
+        ctx.drawImage(myImage, 0, 100);
+
+    };
+    var createGradiant = function (ctx) {
+        //Gradiant
+        var gradiant = ctx.createLinearGradient(0, 0, 0, 80);
+        gradiant.addColorStop(0, "red");
+        gradiant.addColorStop(1, "white");
+
+        ctx.fillStyle = gradiant;
+        ctx.fillRect(0, 300, 150, 80);
+    };
+    var createContent = function (ctx) {
+        createRectangles(ctx);
+        createLinesAndCurves(ctx);
+        createText(ctx);
+        createImage(ctx);
+        createGradiant(ctx);
+        createBezier(ctx);
+    };
+
+    var createBezier = function(context){
+        context.beginPath();
+        context.moveTo(170, 80);
+        context.bezierCurveTo(130, 100, 130, 150, 230, 150);
+        context.bezierCurveTo(250, 180, 320, 180, 340, 150);
+        context.bezierCurveTo(420, 150, 420, 120, 390, 100);
+        context.bezierCurveTo(430, 40, 370, 30, 340, 50);
+        context.bezierCurveTo(320, 5, 250, 20, 250, 50);
+        context.bezierCurveTo(200, 5, 150, 20, 170, 80);
+        context.closePath();
+        context.lineWidth = 5;
+        context.fillStyle = '#8ED6FF';
+        context.fill();
+        context.strokeStyle = '#0000ff';
+        context.stroke();
+
+    };
+    createContent(ctx);
+    var imgData = canvas.toDataURL("image/jpeg", 1.0);
+
+    pdf = new jsPDF();
+    pdf.addImage(imgData,"JPEG", 0,0);
+    pdf.save("myPDF.pdf");
+
+</script>
+
+</body>
+
+</html> 

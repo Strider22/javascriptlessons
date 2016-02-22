@@ -1,0 +1,40 @@
+<!-- Demonstrate the ability to render a canvas to svg -->
+<!DOCTYPE html>
+ <html>
+ <head>
+ <title>First doc</title>
+ <script type="text/javascript" src="canvas2svg-master/canvas2svg.js"></script>
+ </head>
+ 
+<body>
+<div style="display:none;">
+ <img id="source" src="https://mdn.mozillademos.org/files/5397/rhino.jpg" width="300" height="227">
+</div>
+<canvas id="myCanvas">
+</canvas>
+
+<script>
+
+//Create a standard screen canvas and render to it
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+var image =document.getElementById('source');
+
+//Draw a red rectangle
+//ctx.fillStyle="#FF0000";
+//ctx.fillRect(0,0,150,80);
+ctx.drawImage(image,33,71,104, 124, 21, 20, 87, 104);
+//create an svg context and render to it.
+var svgCtx = new C2S(87,104);
+//svgCtx.fillStyle="#FF0000";
+//svgCtx.fillRect(0,0,150,80);
+//
+svgCtx.drawImage(image,33,71,104, 124, 21, 20, 87, 104);
+var mySerializedSVG = svgCtx.getSerializedSvg();
+console.log(mySerializedSVG);
+
+</script>
+
+</body>
+ 
+</html> 

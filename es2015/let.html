@@ -1,0 +1,49 @@
+<h1>es2015</h1>
+
+
+<script>
+	//use strict mode to support es2015
+	//https://msdn.microsoft.com/en-us/library/br230269(v=vs.94).aspx
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+	"use strict";
+
+	//var uses hoisting, so variables are simply undefined
+	function demoHoisting(count)
+	{
+		if (count > 3){
+			var largeMessage = "We're greater than 3";
+			console.log(largeMessage);
+			console.log(smallMessage);
+		}else{
+			var smallMessage = "We're less than or equal to 3";
+			console.log(largeMessage);
+			console.log(smallMessage);
+		}
+
+	}
+
+
+    //let will throw a reference error at runtime.
+	function demoLet(count)
+	{
+		if (count > 3){
+			let largeMessage = "We're greater than 3";
+			console.log(largeMessage);
+			console.log(smallMessage);
+		}else{
+			let smallMessage = "We're less than or equal to 3";
+			console.log(largeMessage);
+			console.log(smallMessage);
+		}
+
+	}
+
+	demoHoisting(4);
+	demoLet(4);
+
+
+</script>
+
+
+
+</SCRIPT>

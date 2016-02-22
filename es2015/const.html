@@ -1,0 +1,50 @@
+<h1>es2015</h1>
+
+
+<script>
+	//use strict mode to support es2015
+	//https://msdn.microsoft.com/en-us/library/br230269(v=vs.94).aspx
+    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+	"use strict";
+
+	const MAX_USERS = 3;
+	//var uses hoisting, so variables are simply undefined
+	function demoHoisting(count)
+	{
+		if (count > MAX_USERS){
+			var largeMessage = "We're greater than " + MAX_USERS;
+			console.log(largeMessage);
+			console.log(smallMessage);
+		}else{
+			var smallMessage = "We're less than or equal to " + MAX_USERS;
+			console.log(largeMessage);
+			console.log(smallMessage);
+		}
+
+	}
+
+
+    //let will throw a reference error at runtime.
+	function demoLet(count)
+	{
+		if (count > MAX_USERS){
+			let largeMessage = "We're greater than " + MAX_USERS;
+			console.log(largeMessage);
+			console.log(smallMessage);
+		}else{
+			let smallMessage = "We're less than or equal to " + MAX_USERS;
+			console.log(largeMessage);
+			console.log(smallMessage);
+		}
+
+	}
+
+	demoHoisting(4);
+	demoLet(4);
+
+
+</script>
+
+
+
+</SCRIPT>

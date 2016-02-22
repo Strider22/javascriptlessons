@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <title>First doc</title>
+ </head>
+ 
+<body>
+
+<canvas id="myCanvas" width="1000" height="700" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+
+//Create the canvas
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+
+//Draw a red rectangle
+ctx.fillStyle="#FF0000";
+ctx.fillRect(0,0,150,80);
+
+</script>
+
+</body>
+ 
+</html> 

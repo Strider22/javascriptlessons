@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ <title>Examples</title>
+ <!-- CSS Style that allows me to hide an image -->
+ <style> img.hidden {display:none;} </style>
+ </head>
+ 
+<body>
+
+<!-- I'm unable to get images to work on the canvas
+<p>
+--> 
+<canvas id="myCanvas" width="100" height="100" style="border:1px solid #c3c3c3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+
+<script>
+
+ var canvas = document.getElementById("myCanvas");
+ var ctx = canvas.getContext("2d");
+
+ var createRectangles = function (ctx) {
+  ctx.fillStyle = "#FF0000";
+  ctx.fillRect(0, 0, 50, 100);
+
+  ctx.fillStyle = "#0000FF";
+  ctx.fillRect(50, 0, 50, 100);
+ };
+
+
+ createRectangles(ctx);
+ //This call will clear the canvas, even though
+ //all we're doing is resetting height to the same thing
+ //it already is.
+ canvas.height = 100;
+
+</script>
+
+</body>
+ 
+</html> 

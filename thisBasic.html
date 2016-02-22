@@ -1,30 +1,51 @@
-<html><body><pre><script>
-  //http://www.sitepoint.com/what-is-this-in-javascript/
-  window.WhoAmI = "I'm the window object";
-  alert("In global scope: window.WhoAmI = " + window.WhoAmI);
-  alert("In global scope: this.WhoAmI = " + this.WhoAmI);
-  alert("In global scope: window === this = " + (window === this));
-  document.writeln(window.WhoAmI);
+<html>
+<body>
+<script>
+    //https://www.youtube.com/watch?v=JduQUNn7L4w
+    //http://www.sitepoint.com/what-is-this-in-javascript/
+    function showThis(invocation) {
+        document.write(invocation + " ----> this = " + this.name + "<br>");
+    }
 
-  function TestThis(){
-    alert("In TestThis function: this.WhoAmI = " + this.WhoAmI);
-    alert("In TestThis function: window === this = " + (window === this));
-  }
+    //Global context
+    var name = "window";
 
-  TestThis();
-
-  function Test(){
-    this.WhoAmI = "I'm the Test object";
-    this.Check1 = function() {
-      alert("In Test.Check1: this.WhoAmI = " + this.WhoAmI);
+    //Object literals
+    var myObject = {
+        name: "myObject",
+        showThis: showThis
     };
-  }
- 
-  Test.prototype.Check2 = function(){
-    alert("In Test.Check2: this.WhoAmI = " + this.WhoAmI);
-  };
-  var t = new Test();
-  alert("In global scope: this.WhoAmI = " + this.WhoAmI);
-  t.Check1();
-  t.Check2();
-</script></pre></body></html>
+
+    //Constructor
+    function Constructor(name) {
+        this.name = name;
+        this.showThis = showThis;
+    }
+
+    var anotherObject = {
+        name: "anotherObject",
+        showThis: function(){
+            //have to use call to reassign this, because
+            //we're simply invoking a function defined on
+            //global context
+            showThis.call(this, this.name);
+        }
+    }
+
+    var secondObject = {name: "secondObject"};
+    var newObject = new Constructor("newObject");
+    var newObject2 = new Constructor("newObject2");
+
+    showThis("showThis");
+    myObject.showThis("myObject.showThis");
+    showThis.apply(secondObject, ["showThis...apply"]);
+    showThis.call(secondObject, "showThis...call");
+    myObject.showThis.apply(secondObject, ["myObject...apply"]);
+    myObject.showThis.call(secondObject, "myObject...call");
+    newObject.showThis("newObject");
+    newObject2.showThis("newObject2");
+    anotherObject.showThis("anotherObject");
+
+</script>
+</body>
+</html>

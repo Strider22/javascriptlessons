@@ -1,0 +1,97 @@
+<!--Learning Local storage.
+Part of HTML5 http://diveintohtml5.info/storage.html
+Referred to as Web Storage https://w3c.github.io/webstorage/
+-->
+<html>
+<body>
+
+<script>
+    /*******************************************************************
+     *
+     * Utility functions
+     *
+     ********************************************************************/
+    //Check to see if local storage is supported
+    var supportsLocalStorage = function () {
+        try {
+            return 'localStorage' in window && window['localStorage'] !== null;
+        } catch (e) {
+            return false;
+        }
+
+    };
+    var printString = function (string) {
+        document.write(string + "<br>");
+    };
+    var printSection = function (string) {
+        document.write("<br>" + string + "<br>");
+    };
+    var printStorage = function () {
+        printString("Printing out Storage")
+
+        var len = localStorage.length;
+        printString("There are " + len + " items in local storage");
+        for (i = 0; i < len; i++) {
+            var key = localStorage.key(i);
+            printString("item " + i + ": key = " + key + ": value = " + localStorage[key]);
+        }
+
+    };
+
+    /*******************************************************************
+     *
+     * Check for local storage support
+     *
+     ********************************************************************/
+    //Call the local Storage Check
+    if (supportsLocalStorage) {
+        printString("Supports local Storage");
+    }
+    else {
+        printString("local Storage not supported");
+    }
+
+    /*******************************************************************
+     *
+     * Set and retrieve information using different syntaxes
+     *
+     ********************************************************************/
+    //set and get
+    localStorage.setItem("firstValue", "Hello World");
+    printString("Method syntax: " + localStorage.getItem("firstValue"));
+
+    //set and get using array syntax
+    localStorage["firstValue"] = "Hello World";
+    printString("Array syntax: " + localStorage["firstValue"]);
+
+    //set and get using dot syntax
+    localStorage.firstValue = "Hello World";
+    printString("Dot syntax: " + localStorage.firstValue);
+
+
+    /*******************************************************************
+     *
+     * Dealing with multiple values
+     *
+     ********************************************************************/
+    printSection("Add some values");
+    localStorage.secondValue = "How are you";
+    localStorage.whatever = "What's up?";
+    printStorage();
+
+    printSection("Clear some values");
+    localStorage.removeItem("firstValue");
+    printStorage();
+
+    /*******************************************************************
+     *
+     * Cleanup
+     *
+     ********************************************************************/
+    printSection("Clear all values");
+    localStorage.clear();
+    printStorage();
+</script>
+
+</body>
+</html>
