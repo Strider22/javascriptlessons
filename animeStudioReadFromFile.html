@@ -1,0 +1,64 @@
+<h1>JSon From File</h1>
+Simple example accessing a local json file in javascript.<br>
+
+<input type="file" id="input">
+<br>
+Result:
+<div id="result"></div>
+
+
+<script>
+    document.getElementById('input').addEventListener('change', readSingleFile, false);
+
+    function readSingleFile(evt) {
+        var f = evt.target.files[0];
+        if (f) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var contents = e.target.result;
+                showJSON(contents);
+            }
+            reader.readAsText(f);
+        }
+    }
+
+    function showStyles(text){
+        var obj = JSON.parse(text);
+        var styles = obj.styles;
+        var string = ""
+        for(var i = 0;i < styles.length;i++){
+            string += styles[i].name + " - " + styles[i].uuid + "<br>";
+        }
+        showResult(string);
+    }
+
+    function showLayers(layers){
+        for(var i = 0;i < layers.length;i++){
+            var layer = layers[i];
+            string += layer.name + " - " + layer.uuid + "<br>";
+            showShapes(layer.mesh.shapes)
+        }
+        showResult(string);
+    }
+
+    function showShapes(shapes){
+        for(var i = 0;i < shapes.length;i++){
+            var shape = shapes[i];
+            string += "    shape - id: " + shape.id + " style1.uuid: "+ shape.inherited_style_uuid + "<br>";
+        }
+        showResult(string);
+    }
+
+    function showJSON(text) {
+        var obj = JSON.parse(text);
+        var string = ""
+        showLayers(obj.layers);
+    }
+
+    var string = "";
+    function showResult(result) {
+        document.getElementById('result').innerHTML = result;
+    }
+
+</script>
+

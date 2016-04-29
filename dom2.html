@@ -1,0 +1,36 @@
+<html>
+<body>
+<article id="myArticle">
+    <section class="myContent">
+        <p>This is just some text that we want to use so that we can see the affect of style. The rest will be just
+        garbage text.  adfk afk eiaflaf kf efk a adfk afk eiaflaf kf efk a adfk afk eiaflaf kf efk a adfk afk eiaflaf
+            adfk afk eiaflaf kf efk a adfk afk eiaflaf kf efk akf efk a adfk afk eiaflaf kf efk a
+            adfk afk eiaflaf kf efk a adfk afk eiaflaf kf efk a adfk afk eiaflaf kf efk a adfk afk eiaflaf kf efk a adfk
+            afk eiaflaf kf efk a adfk afk eiaflaf kf efk a</p>
+    </section>
+
+</article>
+<script>
+    //Setting Attributes
+    var myContent = document.getElementsByClassName('myContent')[0];
+    myContent.setAttribute('align','right');
+
+    //Creating Elements
+    var list = document.createElement("ul");
+    myContent.appendChild(list);
+
+    function addListItem(element, listText){
+        var listItem = document.createElement("li");
+        element.appendChild(listItem);
+        listItem.appendChild(document.createTextNode(listText));
+    }
+    list.setAttribute('align','left');
+    addListItem(list,"First item");
+    addListItem(list,"Second item");
+    addListItem(list,"Third item");
+
+</script>
+
+</body>
+</html>
+

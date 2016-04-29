@@ -1,0 +1,43 @@
+<h1>JSon From File</h1>
+Simple example accessing a local json file in javascript.<br>
+
+<input type="file" id="input">
+<br>
+Text:
+<div id="text"></div>
+<br>
+Result:
+<div id="result"></div>
+
+
+<script>
+    document.getElementById('input').addEventListener('change', readSingleFile, false);
+
+    function readSingleFile(evt) {
+        var f = evt.target.files[0];
+        if (f) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var contents = e.target.result;
+                showJSON(contents,2);
+            }
+            reader.readAsText(f);
+        }
+    }
+
+    function showJSON(text, employeeNum) {
+        var obj = JSON.parse(text);
+        if (employeeNum > obj.employees.length){
+            showResult("employeeNum " + employeeNum + " > " + obj.employees.length);
+            return;
+        }
+        document.getElementById('text').innerHTML = text;
+        showResult(obj.employees[1].firstName + " " + obj.employees[1].lastName);
+    }
+
+    function showResult(result) {
+        document.getElementById('result').innerHTML = result;
+    }
+
+</script>
+

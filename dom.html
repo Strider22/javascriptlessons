@@ -1,0 +1,33 @@
+
+<html>
+<body>
+<article id="advanced-search" class="disposition-dialog dynamic-dialog">
+    <nav data-dojo-type="dijit/Toolbar" id="advancedsearch-toolbar">
+        <label id="advancedsearch-maxrowslabel">Maximum number of rows: </label>
+        <input id="advancedsearch-maxrows"/>
+    </nav>
+
+    <section class="content"  data-dojo-type="dijit/layout/TabContainer" data-dojo-props="doLayout: true">
+    </section>
+
+    <section class="error" style="display:none">
+        <p>Something bad happened</p>
+    </section>
+
+    <section class="dijitDialogPaneActionBar">
+        <button id="advancedsearch-restore" data-dojo-type="dijit.form.Button" data-loc="preferences_restore" data-dojo-props="label: ''"/>
+        <button id="advancedsearch-search" data-dojo-type="dijit/form/Button" data-loc="advancedsearch_search" data-dojo-props="label: ''"></button>
+        <p id="basicText">This is my basic text element.</p>
+    </section>
+</article>
+<script>
+    document.write("Find the basicText by Id<br>");
+    document.write(document.getElementById('basicText').innerHTML + "<br>");
+    document.write("Num Sections = " + document.getElementsByTagName('section').length + "<br>");
+    document.write("num children of third section: " + document.getElementsByClassName('dijitDialogPaneActionBar')[0].childNodes.length + "<br>");
+</script>
+
+</body>
+</html>
+
+<!--See also http://www.w3schools.com/jsref/met_document_createtextnode.asp-->
