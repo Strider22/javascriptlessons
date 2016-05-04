@@ -3,12 +3,17 @@ Simple example accessing a local json file in javascript.<br>
 
 <input type="file" id="input">
 <br>
+Duplicates:
+<div id="duplicates"></div>
 Result:
 <div id="result"></div>
 
 
 <script>
     document.getElementById('input').addEventListener('change', readSingleFile, false);
+    var string = "";
+    var _styleIdToName = {};
+    var duplicateStyles = {};
 
     function readSingleFile(evt) {
         var f = evt.target.files[0];
@@ -22,42 +27,86 @@ Result:
         }
     }
 
-    function showStyles(text){
+    function showJSON(text) {
         var obj = JSON.parse(text);
-        var styles = obj.styles;
-        var string = ""
-        for(var i = 0;i < styles.length;i++){
-            string += styles[i].name + " - " + styles[i].uuid + "<br>";
-        }
-        showResult(string);
+        string = "";
+        showStyles(obj.styles);
+        buildStyleList(obj.styles);
+        //listDuplicates();
+        addButton("Style1",{r:1,g:0,b:0},{b:1,r:1,g:1});
+        addButton("Style 2",{r:0,g:1,b:0},{b:.5,r:.5,g:1});
+        showLayers(obj.layers,"");
+        showDiv("result", string);
     }
 
-    function showLayers(layers){
+    function showLayers(layers,path){
+        var layerPath = "";
         for(var i = 0;i < layers.length;i++){
             var layer = layers[i];
-            string += layer.name + " - " + layer.uuid + "<br>";
-            showShapes(layer.mesh.shapes)
+            if("" === path) layerPath = layer.name;
+            else layerPath = path + "\\" + layer.name;
+            string += layerPath + " - " + layer.uuid + "<br>";
+            if(layer.mesh && layer.mesh.shapes) showShapes(layer.mesh.shapes);
+            if(layer.layers){
+                showLayers(layer.layers,layerPath);
+            }
         }
-        showResult(string);
     }
 
     function showShapes(shapes){
         for(var i = 0;i < shapes.length;i++){
             var shape = shapes[i];
-            string += "    shape - id: " + shape.id + " style1.uuid: "+ shape.inherited_style_uuid + "<br>";
+            string += "    shape - id: " + shape.id + " style1.uuid: "+ shape.inherited_style_uuid;
+            string += " name - " + _styleIdToName[shape.inherited_style_uuid] + "<br>";
         }
-        showResult(string);
     }
 
-    function showJSON(text) {
-        var obj = JSON.parse(text);
-        var string = ""
-        showLayers(obj.layers);
+    function buildStyleList(styles){
+        for(var i = 0;i < styles.length;i++){
+            _styleIdToName[styles[i].uuid] = styles[i].name;
+            if(duplicateStyles[styles[i].name] == undefined){
+                duplicateStyles[styles[i].name] = 0;
+            }else{
+                duplicateStyles[styles[i].name]++;
+            }
+        }
     }
 
-    var string = "";
-    function showResult(result) {
-        document.getElementById('result').innerHTML = result;
+    function rgbColor(color){
+        return "rgb("+Math.trunc(color.r*255) +"," + Math.trunc(color.g*255) + "," + Math.trunc(color.b*255)+")";
+    }
+
+    function addButton(label,stroke,fill) {
+        //Create an input type dynamically.
+        var element = document.createElement("BUTTON");
+        element.innerHTML = "Style"; // Really? You want the default value to be the type string?
+        element.style.borderColor = rgbColor(stroke);
+        element.style.backgroundColor = rgbColor(fill);
+        element.onclick = function() { // Note this is a function
+            alert("blabla");
+        };
+
+        var foo = document.getElementById("duplicates");
+        //Append the element in page (in span).
+        foo.appendChild(element);
+    }
+    
+    function listDuplicates(){
+        var string = "";
+        for(var propertyName in duplicateStyles) {
+            string += propertyName + " has " + duplicateStyles[propertyName] + " duplicates <br>";
+        }
+        showDiv("duplicates", string);
+    }
+
+    function showStyles(styles){
+        for(var i = 0;i < styles.length;i++){
+            string += styles[i].name + " - " + styles[i].uuid + "<br>";
+        }
+    }
+
+    function showDiv(divName,result) {
+        document.getElementById(divName).innerHTML = result;
     }
 
 </script>

@@ -1,0 +1,288 @@
+<html>
+<head>
+    <title>Dojo Drag and Drop Example</title>
+    <link rel="stylesheet" type="text/css"
+          href="http://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/resources/dojo.css">
+    <link rel="stylesheet" type="text/css"
+          href="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: true"></script>
+</head>
+
+<body id="demo1" class="claro">
+
+<h1>Resolve Styles in Anime Studio File</h1>
+<input type="file" id="input">
+
+<div id="store">
+    <div class="wishlistContainer">
+        <h2>Wishlist</h2>
+        <ol id="wishlistNode" class="container"></ol>
+    </div>
+
+    <p class="instructions"><b>Instructions:</b> Drag items around to change the list order. Multiple selection works
+        here (⌘-click/ctrl-click), in case you feel like moving items in bulk.</p>
+</div>
+
+<button id="btn"></button>
+
+<h2>List Order:</h2>
+<div id="results">
+</div>
+
+<br>
+Duplicates:
+<div id="duplicates"></div>
+Result:
+<div id="result"></div>
+
+
+<script>
+
+    require([
+        'dijit/form/Button',
+        'dojo/dom',
+        'dojo/dnd/Source',
+        'dojo/domReady!'], function (Button, dom, Source) {
+
+        document.getElementById('input').addEventListener('change', readSingleFile, false);
+        var string = "";
+        var _styleIdToName = {};
+        var _styleNameToIds = {};
+        var _styleWithMaxDuplicates = "";
+        var _replacementId = {};
+        var _animeStudio = null;
+        var _wishlist = null;
+        var _orderedLayerList = [];
+
+        function readSingleFile(evt) {
+            var f = evt.target.files[0];
+            if (f) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var contents = e.target.result;
+                    buildLayerList(contents);
+                    buildStyleLists();
+                };
+                reader.readAsText(f);
+            }
+        }
+
+        var myButton = new Button({
+            label: "Get list order",
+            onClick: function () {
+                var string = "";
+                _wishlist.getAllNodes().forEach(function (node) {
+                    _orderedLayerList.push(node.innerHTML);
+                });
+                dom.byId("results").innerHTML = string;
+            }
+        }, "btn").startup();
+
+        function buildLayerList(text) {
+            _animeStudio = JSON.parse(text);
+            var layerNames = [];
+            _animeStudio.layers.forEach(function (layer) {
+                layerNames.push(layer.name);
+            });
+            _wishlist = new Source("wishlistNode");
+            _wishlist.insertNodes(false,layerNames);
+        }
+
+        function showJSON(text) {
+            _animeStudio = JSON.parse(text);
+            string = "";
+
+            showStyles(_animeStudio.styles);
+            buildStyleNameToIdsList();
+//        listDuplicates();
+//        addButton("Style1",{r:1,g:0,b:0},{b:1,r:1,g:1});
+//        addButton("Style 2",{r:0,g:1,b:0},{b:.5,r:.5,g:1});
+//        showLayers(obj.layers,"");
+            addDuplicateStyleButtons(_styleNameToIds, _animeStudio.styles);
+//        showDiv("result", stringFromList(topLayersHavingStyle(obj.layers,this.styleWithMaxDuplicates)));
+//        showDiv("result", string);
+        }
+
+        function buildStyleLists() {
+            var that = this;
+            var maxDuplicates = 0;
+            _animeStudio.styles.forEach(function(style,index){
+                _styleIdToName[style.uuid] = style.name;
+                if (_styleNameToIds[style.name] == undefined) {
+                    _styleNameToIds[style.name] = [style.uuid];
+                    if ("" == this.styleWithMaxDuplicates) {
+                        _styleWithMaxDuplicates = style.name;
+                    }
+                } else {
+                    _styleNameToIds[style.name].push(style.uuid);
+                    if (_styleNameToIds.length > maxDuplicates) {
+                        maxDuplicates = _styleNameToIds.length;
+                        _styleWithMaxDuplicates = style.name;
+                    }
+                }
+            });
+        }
+
+        function processNamedLayers() {
+            _orderedLayerList.forEach(function(layerName){
+                var layer = _animeStudio.layers.find(function(layer){
+                            if((layer.name == layerName)&&!layer.layerProcessed){
+                                return layer.layerProcesses = true;
+                            }
+                            return false;
+                        });
+                processLayer(layer);
+            });
+        }
+
+        function processLayer(layer) {
+            if (layer.mesh && layer.mesh.shapes)
+                processShapes(layer.mesh.shapes);
+            if (layer.layers) {
+                layer.layers.forEach(function(layer){
+                    processLayer(layer);
+                });
+            }
+        }
+
+        function processShapes(shapes) {
+            shapes.forEach(function(shape){
+                var uuid = shape.inherited_style_uuid;
+
+
+                var replacementId = getReplacementId();
+                string += " name - " + styleList[shape.inherited_style_uuid] + "<br>";
+            });
+        }
+
+        function replacementIdByStyleName(uuid) {
+            var styleName = _styleIdToName[uuid];
+            var styleIdList = _styleNameToIds[styleName];
+            for(i =0;i< styleIdList.length;i++){
+                var replacementId = _replacementId[styleIdList[i]];
+                if(replacementId) return replacementId;
+            }
+            _replacementId[uuid] = replacementIdByStyleName(uuid);
+            return uuid;
+        }
+
+//        function getReplacementId(uuid) {
+//            var id = _replacementId[uuid];
+//            if(!id){
+//                _replacementId[uuid] = replacementIdByStyleName(uuid);
+//            }else{
+//                return id;
+//            }
+//
+//        }
+
+
+
+        function stringFromList(list) {
+            var string = "";
+            for (var i = 0; i < list.length; i++) {
+                string += list[i] + "<br>";
+            }
+            return string;
+        }
+
+        function showLayers(layers, path) {
+            value = 6;
+            var layerPath = "";
+            for (var i = 0; i < layers.length; i++) {
+                var layer = layers[i];
+                if ("" === path) layerPath = layer.name;
+                else layerPath = path + "\\" + layer.name;
+                string += layerPath + " - " + layer.uuid + "<br>";
+                if (layer.mesh && layer.mesh.shapes) showShapes(layer.mesh.shapes);
+                if (layer.layers) {
+                    showLayers(layer.layers, layerPath);
+                }
+            }
+        }
+
+        function topLayersHavingStyle(layers, style) {
+            var topLayersHavingStyle = [];
+            var layerPath = "";
+            for (var i = 0; i < layers.length; i++) {
+                var layer = layers[i];
+                if (layerHasStyle(layer, style)) topLayersHavingStyle.push(layer.name);
+            }
+            return topLayersHavingStyle;
+        }
+
+        function layerHasStyle(layer, styleName) {
+            if (!layer.mesh || !layer.mesh.shapes) return false;
+            var shapes = layer.mesh.shapes;
+            for (var i = 0; i < shapes.length; i++) {
+                var shape = shapes[i];
+                if (styleName == styleList[shape.inherited_style_uuid]) return true;
+            }
+            if (layer.layers) {
+                for (i = 0; i < layer.layers.length; i++) {
+                    if (layerHasStyle(layer.layers[i], styleName))return true;
+                }
+            }
+            return false;
+        }
+
+
+
+        function rgbColor(color) {
+            return "rgb(" + Math.trunc(color.r * 255) + "," + Math.trunc(color.g * 255) + "," + Math.trunc(color.b * 255) + ")";
+        }
+
+        function addDuplicateStyleButtons(duplicateStyles, styles) {
+            for (var propertyName in duplicateStyles) {
+                var styleList = duplicateStyles[propertyName];
+                for (var i = 0; i < styleList.length; i++) {
+                    var styleIndex = styleList[i];
+                    addStyleButton(styles[styleIndex]);
+                }
+            }
+        }
+
+
+        function addStyleButton(style) {
+            //Create an input type dynamically.
+            var element = document.createElement("BUTTON");
+            element.innerHTML = style.name; // Really? You want the default value to be the type string?
+            element.style.borderColor = rgbColor(style.line_color.val[0]);
+            element.style.backgroundColor = rgbColor(style.fill_color.val[0]);
+            element.onclick = function () { // Note this is a function
+                alert(style.uuid);
+            };
+
+            var foo = document.getElementById("duplicates");
+            //Append the element in page (in span).
+            foo.appendChild(element);
+        }
+
+        function listDuplicates() {
+            var string = "Style with max duplicates is " + _styleWithMaxDuplicates + "<br>";
+            for (var propertyName in _styleNameToIds) {
+                var style = _styleNameToIds[propertyName];
+                string += propertyName + " - ";
+                for (var i = 0; i < style.length; i++) {
+                    string += style[i] + "; ";
+                }
+                string += " <br>";
+            }
+            showDiv("duplicates", string);
+        }
+
+        function showStyles(styles) {
+            for (var i = 0; i < styles.length; i++) {
+                string += styles[i].name + " - " + styles[i].uuid + "<br>";
+            }
+        }
+
+        function showDiv(divName, result) {
+            document.getElementById(divName).innerHTML = result;
+        }
+    });
+
+</script>
+
+</body>
+</html>
