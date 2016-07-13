@@ -1,10 +1,8 @@
-<h1>JSon Test</h1>
-Simple example showing how json can be turned into javascript object.<br>
-<br>
-Text:
-<div id="text"></div>
-<br>
-Result:
+<h1>JSon Basics</h1>
+<h2>JSon text</h2>
+<p id="text"></p>
+
+<h2>Employee[0]</h2>
 <div id="result"></div>
 
 <script>
@@ -13,20 +11,13 @@ Result:
             '{"firstName":"Anna", "lastName":"Smith"},' +
             '{"firstName":"Peter", "lastName":"Jones"}]}';
 
-    function showResult(result) {
-        document.getElementById('result').innerHTML = result;
-    }
 
-    function showJSON(text, employeeNum) {
-        var obj = JSON.parse(text);
-        if (employeeNum > obj.employees.length){
-            showResult("employeeNum " + employeeNum + " > " + obj.employees.length);
-            return;
-        }
-        document.getElementById('text').innerHTML = text;
-        showResult(obj.employees[1].firstName + " " + obj.employees[1].lastName);
-    }
-    showJSON(text,2);
+    document.getElementById('text').innerHTML = text;
+
+    //Create a json object from the text
+    var obj = JSON.parse(text);
+
+    document.getElementById('result').innerHTML = obj.employees[0].firstName + " " + obj.employees[0].lastName;
 
 </script>
 

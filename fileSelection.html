@@ -1,0 +1,22 @@
+<!-- https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications -->
+<!-- http://www.htmlgoodies.com/beyond/javascript/read-text-files-using-the-javascript-filereader.html#fbid=ybig3uW2q-k -->
+<h1>File Selection Dialog</h1>
+
+<!--Input button to trigger file selector-->
+<input type="file" id="input">
+
+<p id="result"></p>
+
+
+
+<script>
+    document.getElementById('input').addEventListener('change', doSomething, false);
+
+    // function triggered by clicking on input button
+    function doSomething(evt) {
+        document.getElementById('result').innerHTML = "file <b>" + evt.target.files[0].name + "</b> was chosen";
+    }
+
+
+</script>
+

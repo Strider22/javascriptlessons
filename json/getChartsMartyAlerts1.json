@@ -1,0 +1,1254 @@
+{
+  "scatter_currency": {
+    "groupingPanel": "yAxis_Format",
+    "chartId": "scatter_currency",
+    "chartType": "scatter",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series4_name": [70081.93, 120082.83, 170083.73, 220084.63, 270085.53, 320086.43, 370087.33, 420088.23, 470089.13, 520090.03],
+      "series3_name": [65081.73, 115082.63, 165083.53, 215084.43, 265085.33, 315086.23, 365087.13, 415088.03, 465088.93, 515089.83],
+      "series2_name": [60081.53, 110082.43, 160083.33, 210084.23, 260085.13, 310086.03, 360086.93, 410087.83, 460088.73, 510089.63],
+      "category_field": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [55081.33, 105082.23, 155083.13, 205084.03, 255084.93, 305085.83, 355086.73, 405087.63, 455088.53, 505089.43],
+      "series6_name": [80082.33, 130083.23, 180084.13, 230085.03, 280085.93, 330086.83, 380087.73, 430088.63, 480089.53, 530090.43],
+      "series5_name": [75082.13, 125083.03, 175083.93, 225084.83, 275085.73, 325086.63, 375087.53, 425088.43, 475089.33, 525090.23]
+    },
+    "seriesColors": {
+      "series4_name": "0xcc0000",
+      "series3_name": "0x0000cc",
+      "series2_name": "0x00cc00",
+      "series1_name": "0xcc0000",
+      "series6_name": "0xcc0000",
+      "series5_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "A": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series4_name": "Orange_Series4",
+      "series3_name": "Blue_Series3",
+      "series2_name": "Green_Series2",
+      "series1_name": "Red_Series1",
+      "series6_name": "Yellow_Series6",
+      "series5_name": "Purple_Series5"
+    },
+    "yAxisPattern": {
+      "majorTickStep": 50000.0,
+      "tickFormatting": {
+        "-50000": "-50 000.00\\u20AC",
+        "0": "0.00\\u20AC",
+        "50000": "50 000.00\\u20AC",
+        "100000": "100 000.00\\u20AC",
+        "150000": "150 000.00\\u20AC",
+        "200000": "200 000.00\\u20AC",
+        "250000": "250 000.00\\u20AC",
+        "300000": "300 000.00\\u20AC",
+        "350000": "350 000.00\\u20AC",
+        "400000": "400 000.00\\u20AC",
+        "450000": "450 000.00\\u20AC",
+        "500000": "500 000.00\\u20AC",
+        "550000": "550 000.00\\u20AC",
+        "600000": "600 000.00\\u20AC",
+        "650000": "650 000.00\\u20AC",
+        "700000": "700 000.00\\u20AC"
+      },
+      "seriesTicks": [{
+        "value": 55081.33,
+        "tick": "55 081.00\\u20AC"
+      }, {
+        "value": 60081.53,
+        "tick": "60 082.00\\u20AC"
+      }, {
+        "value": 65081.73,
+        "tick": "65 082.00\\u20AC"
+      }, {
+        "value": 70081.93,
+        "tick": "70 082.00\\u20AC"
+      }, {
+        "value": 75082.13,
+        "tick": "75 082.00\\u20AC"
+      }, {
+        "value": 80082.33,
+        "tick": "80 082.00\\u20AC"
+      }, {
+        "value": 105082.23,
+        "tick": "105 082.00\\u20AC"
+      }, {
+        "value": 110082.43,
+        "tick": "110 082.00\\u20AC"
+      }, {
+        "value": 115082.63,
+        "tick": "115 083.00\\u20AC"
+      }, {
+        "value": 120082.83,
+        "tick": "120 083.00\\u20AC"
+      }, {
+        "value": 125083.03,
+        "tick": "125 083.00\\u20AC"
+      }, {
+        "value": 130083.23,
+        "tick": "130 083.00\\u20AC"
+      }, {
+        "value": 155083.13,
+        "tick": "155 083.00\\u20AC"
+      }, {
+        "value": 160083.33,
+        "tick": "160 083.00\\u20AC"
+      }, {
+        "value": 165083.53,
+        "tick": "165 084.00\\u20AC"
+      }, {
+        "value": 170083.73,
+        "tick": "170 084.00\\u20AC"
+      }, {
+        "value": 175083.93,
+        "tick": "175 084.00\\u20AC"
+      }, {
+        "value": 180084.13,
+        "tick": "180 084.00\\u20AC"
+      }, {
+        "value": 205084.03,
+        "tick": "205 084.00\\u20AC"
+      }, {
+        "value": 210084.23,
+        "tick": "210 084.00\\u20AC"
+      }, {
+        "value": 215084.43,
+        "tick": "215 084.00\\u20AC"
+      }, {
+        "value": 220084.63,
+        "tick": "220 085.00\\u20AC"
+      }, {
+        "value": 225084.83,
+        "tick": "225 085.00\\u20AC"
+      }, {
+        "value": 230085.03,
+        "tick": "230 085.00\\u20AC"
+      }, {
+        "value": 255084.93,
+        "tick": "255 085.00\\u20AC"
+      }, {
+        "value": 260085.13,
+        "tick": "260 085.00\\u20AC"
+      }, {
+        "value": 265085.33,
+        "tick": "265 085.00\\u20AC"
+      }, {
+        "value": 270085.53,
+        "tick": "270 086.00\\u20AC"
+      }, {
+        "value": 275085.73,
+        "tick": "275 086.00\\u20AC"
+      }, {
+        "value": 280085.93,
+        "tick": "280 086.00\\u20AC"
+      }, {
+        "value": 305085.83,
+        "tick": "305 086.00\\u20AC"
+      }, {
+        "value": 310086.03,
+        "tick": "310 086.00\\u20AC"
+      }, {
+        "value": 315086.23,
+        "tick": "315 086.00\\u20AC"
+      }, {
+        "value": 320086.43,
+        "tick": "320 086.00\\u20AC"
+      }, {
+        "value": 325086.63,
+        "tick": "325 087.00\\u20AC"
+      }, {
+        "value": 330086.83,
+        "tick": "330 087.00\\u20AC"
+      }, {
+        "value": 355086.73,
+        "tick": "355 087.00\\u20AC"
+      }, {
+        "value": 360086.93,
+        "tick": "360 087.00\\u20AC"
+      }, {
+        "value": 365087.13,
+        "tick": "365 087.00\\u20AC"
+      }, {
+        "value": 370087.33,
+        "tick": "370 087.00\\u20AC"
+      }, {
+        "value": 375087.53,
+        "tick": "375 088.00\\u20AC"
+      }, {
+        "value": 380087.73,
+        "tick": "380 088.00\\u20AC"
+      }, {
+        "value": 405087.63,
+        "tick": "405 088.00\\u20AC"
+      }, {
+        "value": 410087.83,
+        "tick": "410 088.00\\u20AC"
+      }, {
+        "value": 415088.03,
+        "tick": "415 088.00\\u20AC"
+      }, {
+        "value": 420088.23,
+        "tick": "420 088.00\\u20AC"
+      }, {
+        "value": 425088.43,
+        "tick": "425 088.00\\u20AC"
+      }, {
+        "value": 430088.63,
+        "tick": "430 089.00\\u20AC"
+      }, {
+        "value": 455088.53,
+        "tick": "455 089.00\\u20AC"
+      }, {
+        "value": 460088.73,
+        "tick": "460 089.00\\u20AC"
+      }, {
+        "value": 465088.93,
+        "tick": "465 089.00\\u20AC"
+      }, {
+        "value": 470089.13,
+        "tick": "470 089.00\\u20AC"
+      }, {
+        "value": 475089.33,
+        "tick": "475 089.00\\u20AC"
+      }, {
+        "value": 480089.53,
+        "tick": "480 090.00\\u20AC"
+      }, {
+        "value": 505089.43,
+        "tick": "505 089.00\\u20AC"
+      }, {
+        "value": 510089.63,
+        "tick": "510 090.00\\u20AC"
+      }, {
+        "value": 515089.83,
+        "tick": "515 090.00\\u20AC"
+      }, {
+        "value": 520090.03,
+        "tick": "520 090.00\\u20AC"
+      }, {
+        "value": 525090.23,
+        "tick": "525 090.00\\u20AC"
+      }, {
+        "value": 530090.43,
+        "tick": "530 090.00\\u20AC"
+      }]
+    },
+    "min": -100.0,
+    "max": 700000.0,
+    "formattedId": "Scatter Currency"
+  },
+  "BAR GRAPH!": {
+    "groupingPanel": "@_Missing_and_Large_Vals",
+    "chartId": "BAR GRAPH!",
+    "chartType": "bar",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [2.0E9, 0, 8.0E9, 1.6E10, 2.0E9, 4.0E9, 8.0E9, 1.6E10, 4.0E9, 8.0E9]
+    },
+    "seriesColors": {
+      "series1_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series1_name": "Red_Series1"
+    },
+    "min": 2.0E9,
+    "max": 1.6E10,
+    "formattedId": "Bar Graph!"
+  },
+  "line": {
+    "groupingPanel": "Bar_Line",
+    "chartId": "line",
+    "chartType": "line",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series4_name": [1.0, 2.0, 3.0, 4.0, 0.0, 2.0, 3.0, 4.0, 2.0, 3.0],
+      "series3_name": [10.0, 2.0, 8.0, 6.0, 10.0, 2.0, 8.0, 6.0, 2.0, 8.0],
+      "series2_name": [5.0, 3.0, 16.0, 10.0, 5.0, 3.0, 16.0, 10.0, 3.0, 16.0],
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [2.0, 4.0, 8.0, 16.0, 2.0, 4.0, 8.0, 16.0, 4.0, 8.0],
+      "series6_name": [5.0, 6.0, 7.0, 8.0, 5.0, 6.0, 7.0, 8.0, 6.0, 7.0],
+      "series5_name": [3.0, 4.0, 5.0, 6.0, 3.0, 4.0, 5.0, 6.0, 4.0, 5.0]
+    },
+    "seriesColors": {
+      "series4_name": "0xcc0000",
+      "series3_name": "0x0000cc",
+      "series2_name": "0x00cc00",
+      "series1_name": "0xcc0000",
+      "series6_name": "0xcc0000",
+      "series5_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series4_name": "Orange_Series4",
+      "series3_name": "Blue_Series3",
+      "series2_name": "Green_Series2",
+      "series1_name": "Red_Series1",
+      "series6_name": "Yellow_Series6",
+      "series5_name": "Purple_Series5"
+    },
+    "min": 0.0,
+    "max": 16.0,
+    "formattedId": "Line"
+  },
+  "Boston": {
+    "groupingPanel": "Image",
+    "chartId": "Boston",
+    "chartType": "image",
+    "categoryField": "category_field",
+    "imageSource": "http://www.sas.com/offices/NA/images/Boston.jpg",
+    "valid": true,
+    "series": {},
+    "seriesColors": {},
+    "categoryColors": {},
+    "seriesLabels": {},
+    "formattedId": "Boston"
+  },
+  "pc1": {
+    "groupingPanel": "Pie",
+    "chartId": "pc1",
+    "chartType": "pie",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [2.0, 4.0, 8.0, 16.0, 2.0, 4.0, 8.0, 16.0, 4.0, 8.0]
+    },
+    "seriesColors": {},
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series1_name": "Red_Series1"
+    },
+    "min": 2.0,
+    "max": 16.0,
+    "formattedId": "Pc1"
+  },
+  "line_datetime": {
+    "groupingPanel": "yAxis_Format",
+    "chartId": "line_datetime",
+    "chartType": "line",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series4_name": [1.7170954259E9, 1.7171454259E9, 1.7171954259E9, 1.7172454259E9, 1.7172954259E9, 1.7173454259E9, 1.7173954259E9, 1.7174454259E9, 1.7174954259E9, 1.7175454259E9],
+      "series3_name": [1.7170854259E9, 1.7171354259E9, 1.7171854259E9, 1.7172354259E9, 1.7172854259E9, 1.7173354259E9, 1.7173854259E9, 1.7174354259E9, 1.7174854259E9, 1.7175354259E9],
+      "series2_name": [1.7170754259E9, 1.7171254259E9, 1.7171754259E9, 1.7172254259E9, 1.7172754259E9, 1.7173254259E9, 1.7173754259E9, 1.7174254259E9, 1.7174754259E9, 1.7175254259E9],
+      "category_field": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [1.7170654259E9, 1.7171154259E9, 1.7171654259E9, 1.7172154259E9, 1.7172654259E9, 1.7173154259E9, 1.7173654259E9, 1.7174154259E9, 1.7174654259E9, 1.7175154259E9],
+      "series6_name": [1.7171154259E9, 1.7171654259E9, 1.7172154259E9, 1.7172654259E9, 1.7173154259E9, 1.7173654259E9, 1.7174154259E9, 1.7174654259E9, 1.7175154259E9, 1.7175654259E9],
+      "series5_name": [1.7171054259E9, 1.7171554259E9, 1.7172054259E9, 1.7172554259E9, 1.7173054259E9, 1.7173554259E9, 1.7174054259E9, 1.7174554259E9, 1.7175054259E9, 1.7175554259E9]
+    },
+    "seriesColors": {
+      "series4_name": "0xcc0000",
+      "series3_name": "0x0000cc",
+      "series2_name": "0x00cc00",
+      "series1_name": "0xcc0000",
+      "series6_name": "0xcc0000",
+      "series5_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "A": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series4_name": "Orange_Series4",
+      "series3_name": "Blue_Series3",
+      "series2_name": "Green_Series2",
+      "series1_name": "Red_Series1",
+      "series6_name": "Yellow_Series6",
+      "series5_name": "Purple_Series5"
+    },
+    "yAxisPattern": {
+      "majorTickStep": 100000.0,
+      "tickFormatting": {
+        "1717000000": "04:26 PM",
+        "1717100000": "08:13 PM",
+        "1717200000": "12:00 AM",
+        "1717300000": "03:46 AM",
+        "1717400000": "07:33 AM",
+        "1717500000": "11:20 AM",
+        "1717600000": "03:06 PM",
+        "1717700000": "06:53 PM",
+        "1717800000": "10:40 PM",
+        "1717900000": "02:26 AM",
+        "1718000000": "06:13 AM",
+        "1718100000": "10:00 AM"
+      },
+      "seriesTicks": [{
+        "value": 1.7170654259E9,
+        "tick": "10:37 AM"
+      }, {
+        "value": 1.7170754259E9,
+        "tick": "01:23 PM"
+      }, {
+        "value": 1.7170854259E9,
+        "tick": "04:10 PM"
+      }, {
+        "value": 1.7170954259E9,
+        "tick": "06:57 PM"
+      }, {
+        "value": 1.7171054259E9,
+        "tick": "09:43 PM"
+      }, {
+        "value": 1.7171154259E9,
+        "tick": "12:30 AM"
+      }, {
+        "value": 1.7171154259E9,
+        "tick": "12:30 AM"
+      }, {
+        "value": 1.7171254259E9,
+        "tick": "03:17 AM"
+      }, {
+        "value": 1.7171354259E9,
+        "tick": "06:03 AM"
+      }, {
+        "value": 1.7171454259E9,
+        "tick": "08:50 AM"
+      }, {
+        "value": 1.7171554259E9,
+        "tick": "11:37 AM"
+      }, {
+        "value": 1.7171654259E9,
+        "tick": "02:23 PM"
+      }, {
+        "value": 1.7171654259E9,
+        "tick": "02:23 PM"
+      }, {
+        "value": 1.7171754259E9,
+        "tick": "05:10 PM"
+      }, {
+        "value": 1.7171854259E9,
+        "tick": "07:57 PM"
+      }, {
+        "value": 1.7171954259E9,
+        "tick": "10:43 PM"
+      }, {
+        "value": 1.7172054259E9,
+        "tick": "01:30 AM"
+      }, {
+        "value": 1.7172154259E9,
+        "tick": "04:17 AM"
+      }, {
+        "value": 1.7172154259E9,
+        "tick": "04:17 AM"
+      }, {
+        "value": 1.7172254259E9,
+        "tick": "07:03 AM"
+      }, {
+        "value": 1.7172354259E9,
+        "tick": "09:50 AM"
+      }, {
+        "value": 1.7172454259E9,
+        "tick": "12:37 PM"
+      }, {
+        "value": 1.7172554259E9,
+        "tick": "03:23 PM"
+      }, {
+        "value": 1.7172654259E9,
+        "tick": "06:10 PM"
+      }, {
+        "value": 1.7172654259E9,
+        "tick": "06:10 PM"
+      }, {
+        "value": 1.7172754259E9,
+        "tick": "08:57 PM"
+      }, {
+        "value": 1.7172854259E9,
+        "tick": "11:43 PM"
+      }, {
+        "value": 1.7172954259E9,
+        "tick": "02:30 AM"
+      }, {
+        "value": 1.7173054259E9,
+        "tick": "05:17 AM"
+      }, {
+        "value": 1.7173154259E9,
+        "tick": "08:03 AM"
+      }, {
+        "value": 1.7173154259E9,
+        "tick": "08:03 AM"
+      }, {
+        "value": 1.7173254259E9,
+        "tick": "10:50 AM"
+      }, {
+        "value": 1.7173354259E9,
+        "tick": "01:37 PM"
+      }, {
+        "value": 1.7173454259E9,
+        "tick": "04:23 PM"
+      }, {
+        "value": 1.7173554259E9,
+        "tick": "07:10 PM"
+      }, {
+        "value": 1.7173654259E9,
+        "tick": "09:57 PM"
+      }, {
+        "value": 1.7173654259E9,
+        "tick": "09:57 PM"
+      }, {
+        "value": 1.7173754259E9,
+        "tick": "12:43 AM"
+      }, {
+        "value": 1.7173854259E9,
+        "tick": "03:30 AM"
+      }, {
+        "value": 1.7173954259E9,
+        "tick": "06:17 AM"
+      }, {
+        "value": 1.7174054259E9,
+        "tick": "09:03 AM"
+      }, {
+        "value": 1.7174154259E9,
+        "tick": "11:50 AM"
+      }, {
+        "value": 1.7174154259E9,
+        "tick": "11:50 AM"
+      }, {
+        "value": 1.7174254259E9,
+        "tick": "02:37 PM"
+      }, {
+        "value": 1.7174354259E9,
+        "tick": "05:23 PM"
+      }, {
+        "value": 1.7174454259E9,
+        "tick": "08:10 PM"
+      }, {
+        "value": 1.7174554259E9,
+        "tick": "10:57 PM"
+      }, {
+        "value": 1.7174654259E9,
+        "tick": "01:43 AM"
+      }, {
+        "value": 1.7174654259E9,
+        "tick": "01:43 AM"
+      }, {
+        "value": 1.7174754259E9,
+        "tick": "04:30 AM"
+      }, {
+        "value": 1.7174854259E9,
+        "tick": "07:17 AM"
+      }, {
+        "value": 1.7174954259E9,
+        "tick": "10:03 AM"
+      }, {
+        "value": 1.7175054259E9,
+        "tick": "12:50 PM"
+      }, {
+        "value": 1.7175154259E9,
+        "tick": "03:37 PM"
+      }, {
+        "value": 1.7175154259E9,
+        "tick": "03:37 PM"
+      }, {
+        "value": 1.7175254259E9,
+        "tick": "06:23 PM"
+      }, {
+        "value": 1.7175354259E9,
+        "tick": "09:10 PM"
+      }, {
+        "value": 1.7175454259E9,
+        "tick": "11:57 PM"
+      }, {
+        "value": 1.7175554259E9,
+        "tick": "02:43 AM"
+      }, {
+        "value": 1.7175654259E9,
+        "tick": "05:30 AM"
+      }]
+    },
+    "min": 1.717E9,
+    "max": 1.718E9,
+    "formattedId": "Line Datetime"
+  },
+  "pc2": {
+    "groupingPanel": "Pie",
+    "chartId": "pc2",
+    "chartType": "pie",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series2_name": [5.0, 3.0, 16.0, 10.0, 5.0, 3.0, 16.0, 10.0, 3.0, 16.0],
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+    },
+    "seriesColors": {},
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series2_name": "Green_Series2"
+    },
+    "min": 3.0,
+    "max": 16.0,
+    "formattedId": "Pc2"
+  },
+  "Charlotte": {
+    "groupingPanel": "Image",
+    "chartId": "Charlotte",
+    "chartType": "image",
+    "categoryField": "category_field",
+    "imageSource": "http://www.sas.com/offices/NA/images/charlotte.jpg",
+    "valid": true,
+    "series": {},
+    "seriesColors": {},
+    "categoryColors": {},
+    "seriesLabels": {},
+    "formattedId": "Charlotte"
+  },
+  "2012 scatter": {
+    "groupingPanel": "@_Missing_and_Large_Vals",
+    "chartId": "2012 scatter",
+    "chartType": "scatter",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series4_name": [1.0E9, 2.0E9, 3.0E9, 4.0E9, 0.0, 2.0E9, 3.0E9, 4.0E9, 2.0E9, 3.0E9],
+      "series3_name": [1.0E10, 2.0E9, 8.0E9, 6.0E9, 1.0E10, 2.0E9, 8.0E9, 6.0E9, 2.0E9, 8.0E9],
+      "series2_name": [5.0E9, 3.0E9, 1.6E10, 1.0E10, 5.0E9, 3.0E9, 1.6E10, 1.0E10, 3.0E9, 1.6E10],
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [2.0E9, 0, 8.0E9, 1.6E10, 2.0E9, 4.0E9, 8.0E9, 1.6E10, 4.0E9, 8.0E9],
+      "series6_name": [5.0E9, 6.0E9, 7.0E9, 8.0E9, 5.0E9, 6.0E9, 7.0E9, 8.0E9, 6.0E9, 7.0E9],
+      "series5_name": [3.0E9, 4.0E9, 5.0E9, 6.0E9, 3.0E9, 4.0E9, 5.0E9, 6.0E9, 4.0E9, 5.0E9]
+    },
+    "seriesColors": {
+      "series4_name": "0xcc0000",
+      "series3_name": "0x0000cc",
+      "series2_name": "0x00cc00",
+      "series1_name": "0xcc0000",
+      "series6_name": "0xcc0000",
+      "series5_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series4_name": "Orange_Series4",
+      "series3_name": "Blue_Series3",
+      "series2_name": "Green_Series2",
+      "series1_name": "Red_Series1",
+      "series6_name": "Yellow_Series6",
+      "series5_name": "Purple_Series5"
+    },
+    "min": 0.0,
+    "max": 1.6E10,
+    "formattedId": "2012 Scatter"
+  },
+  "scatter": {
+    "groupingPanel": "Scatter",
+    "chartId": "scatter",
+    "chartType": "scatter",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series4_name": [1.0, 2.0, 3.0, 4.0, 0.0, 2.0, 3.0, 4.0, 2.0, 3.0],
+      "series3_name": [10.0, 2.0, 8.0, 6.0, 10.0, 2.0, 8.0, 6.0, 2.0, 8.0],
+      "series2_name": [5.0, 3.0, 16.0, 10.0, 5.0, 3.0, 16.0, 10.0, 3.0, 16.0],
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [2.0, 4.0, 8.0, 16.0, 2.0, 4.0, 8.0, 16.0, 4.0, 8.0],
+      "series6_name": [5.0, 6.0, 7.0, 8.0, 5.0, 6.0, 7.0, 8.0, 6.0, 7.0],
+      "series5_name": [3.0, 4.0, 5.0, 6.0, 3.0, 4.0, 5.0, 6.0, 4.0, 5.0]
+    },
+    "seriesColors": {
+      "series4_name": "0xcc0000",
+      "series3_name": "0x0000cc",
+      "series2_name": "0x00cc00",
+      "series1_name": "0xcc0000",
+      "series6_name": "0xcc0000",
+      "series5_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series4_name": "Orange_Series4",
+      "series3_name": "Blue_Series3",
+      "series2_name": "Green_Series2",
+      "series1_name": "Red_Series1",
+      "series6_name": "Yellow_Series6",
+      "series5_name": "Purple_Series5"
+    },
+    "min": 0.0,
+    "max": 16.0,
+    "formattedId": "Scatter"
+  },
+  "pc3": {
+    "groupingPanel": "Pie",
+    "chartId": "pc3",
+    "chartType": "pie",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series3_name": [10.0, 2.0, 8.0, 6.0, 10.0, 2.0, 8.0, 6.0, 2.0, 8.0],
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+    },
+    "seriesColors": {},
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series3_name": "Blue_Series3"
+    },
+    "min": 2.0,
+    "max": 10.0,
+    "formattedId": "Pc3"
+  },
+  "2012 line": {
+    "groupingPanel": "@_Missing_and_Large_Vals",
+    "chartId": "2012 line",
+    "chartType": "line",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series4_name": [1.0E9, 2.0E9, 3.0E9, 4.0E9, 0.0, 2.0E9, 3.0E9, 4.0E9, 2.0E9, 3.0E9],
+      "series3_name": [1.0E10, 2.0E9, 8.0E9, 6.0E9, 1.0E10, 2.0E9, 8.0E9, 6.0E9, 2.0E9, 8.0E9],
+      "series2_name": [5.0E9, 3.0E9, 1.6E10, 1.0E10, 5.0E9, 3.0E9, 1.6E10, 1.0E10, 3.0E9, 1.6E10],
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [2.0E9, 5.0E9, 8.0E9, 1.6E10, 2.0E9, 4.0E9, 8.0E9, 1.6E10, 4.0E9, 8.0E9],
+      "series6_name": [5.0E9, 6.0E9, 7.0E9, 8.0E9, 5.0E9, 6.0E9, 7.0E9, 8.0E9, 6.0E9, 7.0E9],
+      "series5_name": [3.0E9, 4.0E9, 5.0E9, 6.0E9, 3.0E9, 4.0E9, 5.0E9, 6.0E9, 4.0E9, 5.0E9]
+    },
+    "seriesColors": {
+      "series4_name": "0xcc0000",
+      "series3_name": "0x0000cc",
+      "series2_name": "0x00cc00",
+      "series1_name": "0xcc0000",
+      "series6_name": "0xcc0000",
+      "series5_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series4_name": "Orange_Series4",
+      "series3_name": "Blue_Series3",
+      "series2_name": "Green_Series2",
+      "series1_name": "Red_Series1",
+      "series6_name": "Yellow_Series6",
+      "series5_name": "Purple_Series5"
+    },
+    "min": 0.0,
+    "max": 1.6E10,
+    "formattedId": "2012 Line"
+  },
+  "2012 pie": {
+    "groupingPanel": "@_Missing_and_Large_Vals",
+    "chartId": "2012 pie",
+    "chartType": "pie",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [2.0E9, 4.0E9, 8.0E9, 1.6E10, 2.0E9, 4.0E9, 8.0E9, 1.6E10, 4.0E9, 8.0E9]
+    },
+    "seriesColors": {
+      "series1_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series1_name": "Red_Series1"
+    },
+    "min": 2.0E9,
+    "max": 1.6E10,
+    "formattedId": "2012 Pie"
+  },
+  "Greenwood_Village": {
+    "groupingPanel": "Image",
+    "chartId": "Greenwood_Village",
+    "chartType": "image",
+    "categoryField": "category_field",
+    "imageSource": "http://www.sas.com/offices/NA/images/greenwoodvillage.jpg",
+    "valid": true,
+    "series": {},
+    "seriesColors": {},
+    "categoryColors": {},
+    "seriesLabels": {},
+    "formattedId": "Greenwood Village"
+  },
+  "Dallas": {
+    "groupingPanel": "Image",
+    "chartId": "Dallas",
+    "chartType": "image",
+    "categoryField": "category_field",
+    "imageSource": "http://www.sas.com/offices/NA/images/dallas.jpg",
+    "valid": true,
+    "series": {},
+    "seriesColors": {},
+    "categoryColors": {},
+    "seriesLabels": {},
+    "formattedId": "Dallas"
+  },
+  "pie_currency": {
+    "groupingPanel": "yAxis_Format",
+    "chartId": "pie_currency",
+    "chartType": "pie",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "category_field": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [55081.33, 105082.23, 155083.13, 205084.03, 255084.93, 305085.83, 355086.73, 405087.63, 455088.53, 505089.43]
+    },
+    "seriesColors": {},
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "A": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series1_name": "Red_Series1"
+    },
+    "yAxisPattern": {
+      "majorTickStep": 500000.5,
+      "tickFormatting": {
+        "-500000": "$-500,000.00",
+        "0": "$0.00",
+        "500000": "$500,000.00",
+        "1000001": "$1,000,001.00",
+        "1500002": "$1,500,002.00",
+        "2000002": "$2,000,002.00"
+      },
+      "seriesTicks": [{
+        "value": 55081.33,
+        "tick": "$55,081.00"
+      }, {
+        "value": 105082.23,
+        "tick": "$105,082.00"
+      }, {
+        "value": 155083.13,
+        "tick": "$155,083.00"
+      }, {
+        "value": 205084.03,
+        "tick": "$205,084.00"
+      }, {
+        "value": 255084.93,
+        "tick": "$255,085.00"
+      }, {
+        "value": 305085.83,
+        "tick": "$305,086.00"
+      }, {
+        "value": 355086.73,
+        "tick": "$355,087.00"
+      }, {
+        "value": 405087.63,
+        "tick": "$405,088.00"
+      }, {
+        "value": 455088.53,
+        "tick": "$455,089.00"
+      }, {
+        "value": 505089.43,
+        "tick": "$505,089.00"
+      }]
+    },
+    "min": -100.0,
+    "max": 2000000.0,
+    "formattedId": "Pie Currency"
+  },
+  "bar": {
+    "groupingPanel": "Bar_Line",
+    "chartId": "bar",
+    "chartType": "bar",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series4_name": [1.0, 2.0, 3.0, 4.0, 0.0, 2.0, 3.0, 4.0, 2.0, 3.0],
+      "series3_name": [10.0, 2.0, 8.0, 6.0, 10.0, 2.0, 8.0, 6.0, 2.0, 8.0],
+      "series2_name": [5.0, 3.0, 16.0, 10.0, 5.0, 3.0, 16.0, 10.0, 3.0, 16.0],
+      "category_field": ["\u0026#34917", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [2.0, 4.0, 8.0, 16.0, 2.0, 4.0, 8.0, 16.0, 4.0, 8.0],
+      "series6_name": [5.0, 6.0, 7.0, 8.0, 5.0, 6.0, 7.0, 8.0, 6.0, 7.0],
+      "series5_name": [3.0, 4.0, 5.0, 6.0, 3.0, 4.0, 5.0, 6.0, 4.0, 5.0]
+    },
+    "seriesColors": {
+      "series4_name": "0xcc0000",
+      "series3_name": "0x0000cc",
+      "series2_name": "0x00cc00",
+      "series1_name": "0xcc0000",
+      "series6_name": "0xcc0000",
+      "series5_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "\u0026#34917": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series4_name": "Orange_Series4",
+      "series3_name": "Blue_Series3",
+      "series2_name": "Green_Series2",
+      "series1_name": "Red_Series1",
+      "series6_name": "Yellow_Series6",
+      "series5_name": "Purple_Series5"
+    },
+    "min": -1.0,
+    "max": 16.0,
+    "formattedId": "Bar"
+  },
+  "bar_date": {
+    "groupingPanel": "yAxis_Format",
+    "chartId": "bar_date",
+    "chartType": "bar",
+    "categoryField": "category_field",
+    "valid": true,
+    "series": {
+      "series4_name": [19879.0, 19884.0, 19889.0, 19894.0, 19899.0, 19904.0, 19909.0, 19914.0, 19919.0, 19924.0],
+      "series3_name": [19878.0, 19883.0, 19888.0, 19893.0, 19898.0, 19903.0, 19908.0, 19913.0, 19918.0, 19923.0],
+      "series2_name": [19877.0, 19882.0, 19887.0, 19892.0, 19897.0, 19902.0, 19907.0, 19912.0, 19917.0, 19922.0],
+      "category_field": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "series1_name": [19876.0, 19881.0, 19886.0, 19891.0, 19896.0, 19901.0, 19906.0, 19911.0, 19916.0, 19921.0],
+      "series6_name": [19881.0, 19886.0, 19891.0, 19896.0, 19901.0, 19906.0, 19911.0, 19916.0, 19921.0, 19926.0],
+      "series5_name": [19880.0, 19885.0, 19890.0, 19895.0, 19900.0, 19905.0, 19910.0, 19915.0, 19920.0, 19925.0]
+    },
+    "seriesColors": {
+      "series4_name": "0xcc0000",
+      "series3_name": "0x0000cc",
+      "series2_name": "0x00cc00",
+      "series1_name": "0xcc0000",
+      "series6_name": "0xcc0000",
+      "series5_name": "0xcc0000"
+    },
+    "categoryColors": {
+      "D": "0xc0c0c0",
+      "C": "0xcc00cc",
+      "B": "0x00cccc",
+      "A": "0xcccc00",
+      "J": "0xcc00cc",
+      "I": "0x00cccc",
+      "H": "0xc0c0c0",
+      "G": "0xcc00cc",
+      "F": "0x00cccc",
+      "E": "0xcccc00"
+    },
+    "seriesLabels": {
+      "series4_name": "Orange_Series4",
+      "series3_name": "Blue_Series3",
+      "series2_name": "Green_Series2",
+      "series1_name": "Red_Series1",
+      "series6_name": "Yellow_Series6",
+      "series5_name": "Purple_Series5"
+    },
+    "yAxisPattern": {
+      "majorTickStep": 10.0,
+      "tickFormatting": {
+        "19860": "Sat, May 17, 2014",
+        "19870": "Tue, May 27, 2014",
+        "19880": "Fri, Jun 6, 2014",
+        "19890": "Mon, Jun 16, 2014",
+        "19900": "Thu, Jun 26, 2014",
+        "19910": "Sun, Jul 6, 2014",
+        "19920": "Wed, Jul 16, 2014",
+        "19930": "Sat, Jul 26, 2014",
+        "19940": "Tue, Aug 5, 2014",
+        "19950": "Fri, Aug 15, 2014",
+        "19960": "Mon, Aug 25, 2014",
+        "19970": "Thu, Sep 4, 2014"
+      },
+      "seriesTicks": [{
+        "value": 19876.0,
+        "tick": "Mon, Jun 2, 2014"
+      }, {
+        "value": 19877.0,
+        "tick": "Tue, Jun 3, 2014"
+      }, {
+        "value": 19878.0,
+        "tick": "Wed, Jun 4, 2014"
+      }, {
+        "value": 19879.0,
+        "tick": "Thu, Jun 5, 2014"
+      }, {
+        "value": 19880.0,
+        "tick": "Fri, Jun 6, 2014"
+      }, {
+        "value": 19881.0,
+        "tick": "Sat, Jun 7, 2014"
+      }, {
+        "value": 19881.0,
+        "tick": "Sat, Jun 7, 2014"
+      }, {
+        "value": 19882.0,
+        "tick": "Sun, Jun 8, 2014"
+      }, {
+        "value": 19883.0,
+        "tick": "Mon, Jun 9, 2014"
+      }, {
+        "value": 19884.0,
+        "tick": "Tue, Jun 10, 2014"
+      }, {
+        "value": 19885.0,
+        "tick": "Wed, Jun 11, 2014"
+      }, {
+        "value": 19886.0,
+        "tick": "Thu, Jun 12, 2014"
+      }, {
+        "value": 19886.0,
+        "tick": "Thu, Jun 12, 2014"
+      }, {
+        "value": 19887.0,
+        "tick": "Fri, Jun 13, 2014"
+      }, {
+        "value": 19888.0,
+        "tick": "Sat, Jun 14, 2014"
+      }, {
+        "value": 19889.0,
+        "tick": "Sun, Jun 15, 2014"
+      }, {
+        "value": 19890.0,
+        "tick": "Mon, Jun 16, 2014"
+      }, {
+        "value": 19891.0,
+        "tick": "Tue, Jun 17, 2014"
+      }, {
+        "value": 19891.0,
+        "tick": "Tue, Jun 17, 2014"
+      }, {
+        "value": 19892.0,
+        "tick": "Wed, Jun 18, 2014"
+      }, {
+        "value": 19893.0,
+        "tick": "Thu, Jun 19, 2014"
+      }, {
+        "value": 19894.0,
+        "tick": "Fri, Jun 20, 2014"
+      }, {
+        "value": 19895.0,
+        "tick": "Sat, Jun 21, 2014"
+      }, {
+        "value": 19896.0,
+        "tick": "Sun, Jun 22, 2014"
+      }, {
+        "value": 19896.0,
+        "tick": "Sun, Jun 22, 2014"
+      }, {
+        "value": 19897.0,
+        "tick": "Mon, Jun 23, 2014"
+      }, {
+        "value": 19898.0,
+        "tick": "Tue, Jun 24, 2014"
+      }, {
+        "value": 19899.0,
+        "tick": "Wed, Jun 25, 2014"
+      }, {
+        "value": 19900.0,
+        "tick": "Thu, Jun 26, 2014"
+      }, {
+        "value": 19901.0,
+        "tick": "Fri, Jun 27, 2014"
+      }, {
+        "value": 19901.0,
+        "tick": "Fri, Jun 27, 2014"
+      }, {
+        "value": 19902.0,
+        "tick": "Sat, Jun 28, 2014"
+      }, {
+        "value": 19903.0,
+        "tick": "Sun, Jun 29, 2014"
+      }, {
+        "value": 19904.0,
+        "tick": "Mon, Jun 30, 2014"
+      }, {
+        "value": 19905.0,
+        "tick": "Tue, Jul 1, 2014"
+      }, {
+        "value": 19906.0,
+        "tick": "Wed, Jul 2, 2014"
+      }, {
+        "value": 19906.0,
+        "tick": "Wed, Jul 2, 2014"
+      }, {
+        "value": 19907.0,
+        "tick": "Thu, Jul 3, 2014"
+      }, {
+        "value": 19908.0,
+        "tick": "Fri, Jul 4, 2014"
+      }, {
+        "value": 19909.0,
+        "tick": "Sat, Jul 5, 2014"
+      }, {
+        "value": 19910.0,
+        "tick": "Sun, Jul 6, 2014"
+      }, {
+        "value": 19911.0,
+        "tick": "Mon, Jul 7, 2014"
+      }, {
+        "value": 19911.0,
+        "tick": "Mon, Jul 7, 2014"
+      }, {
+        "value": 19912.0,
+        "tick": "Tue, Jul 8, 2014"
+      }, {
+        "value": 19913.0,
+        "tick": "Wed, Jul 9, 2014"
+      }, {
+        "value": 19914.0,
+        "tick": "Thu, Jul 10, 2014"
+      }, {
+        "value": 19915.0,
+        "tick": "Fri, Jul 11, 2014"
+      }, {
+        "value": 19916.0,
+        "tick": "Sat, Jul 12, 2014"
+      }, {
+        "value": 19916.0,
+        "tick": "Sat, Jul 12, 2014"
+      }, {
+        "value": 19917.0,
+        "tick": "Sun, Jul 13, 2014"
+      }, {
+        "value": 19918.0,
+        "tick": "Mon, Jul 14, 2014"
+      }, {
+        "value": 19919.0,
+        "tick": "Tue, Jul 15, 2014"
+      }, {
+        "value": 19920.0,
+        "tick": "Wed, Jul 16, 2014"
+      }, {
+        "value": 19921.0,
+        "tick": "Thu, Jul 17, 2014"
+      }, {
+        "value": 19921.0,
+        "tick": "Thu, Jul 17, 2014"
+      }, {
+        "value": 19922.0,
+        "tick": "Fri, Jul 18, 2014"
+      }, {
+        "value": 19923.0,
+        "tick": "Sat, Jul 19, 2014"
+      }, {
+        "value": 19924.0,
+        "tick": "Sun, Jul 20, 2014"
+      }, {
+        "value": 19925.0,
+        "tick": "Mon, Jul 21, 2014"
+      }, {
+        "value": 19926.0,
+        "tick": "Tue, Jul 22, 2014"
+      }]
+    },
+    "min": 19860.0,
+    "max": 19960.0,
+    "formattedId": "Bar Date"
+  }
+}

@@ -1,14 +1,14 @@
+<!--Same as jsonBasics.html, but reading json from file.-->
+
 <h1>JSon From File</h1>
-Simple example accessing a local json file in javascript.<br>
-
+<h2>Select json/simple.json</h2>
 <input type="file" id="input">
-<br>
-Text:
-<div id="text"></div>
-<br>
-Result:
-<div id="result"></div>
 
+<h2>JsonText</h2>
+<p id="text"></p>
+
+<h2>Employee[0]</h2>
+<div id="result"></div>
 
 <script>
     document.getElementById('input').addEventListener('change', readSingleFile, false);
@@ -18,25 +18,12 @@ Result:
         if (f) {
             var reader = new FileReader();
             reader.onload = function (e) {
-                var contents = e.target.result;
-                showJSON(contents,2);
+                document.getElementById('text').innerHTML = e.target.result;
+                var obj = JSON.parse(e.target.result);
+                document.getElementById('result').innerHTML = obj.employees[0].firstName + " " + obj.employees[0].lastName;
             }
             reader.readAsText(f);
         }
-    }
-
-    function showJSON(text, employeeNum) {
-        var obj = JSON.parse(text);
-        if (employeeNum > obj.employees.length){
-            showResult("employeeNum " + employeeNum + " > " + obj.employees.length);
-            return;
-        }
-        document.getElementById('text').innerHTML = text;
-        showResult(obj.employees[1].firstName + " " + obj.employees[1].lastName);
-    }
-
-    function showResult(result) {
-        document.getElementById('result').innerHTML = result;
     }
 
 </script>

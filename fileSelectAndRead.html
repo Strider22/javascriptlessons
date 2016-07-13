@@ -1,0 +1,31 @@
+<!-- https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications -->
+<!-- http://www.htmlgoodies.com/beyond/javascript/read-text-files-using-the-javascript-filereader.html#fbid=ybig3uW2q-k -->
+
+<h1>File Select and Read</h1>
+
+<h2>Select the file to read</h2>
+<input type="file" id="input">
+
+<h1 id="textHeader"></h1>
+<div id="text"></div>
+
+
+<script>
+
+    document.getElementById('input').addEventListener('change', readSingleFile, false);
+
+    function readSingleFile(evt) {
+        var f = evt.target.files[0];
+        if (f) {
+            var reader = new FileReader();
+            document.getElementById('textHeader').innerHTML = "Text of " + f.name;
+            reader.onload = function (e) {
+                var contents = e.target.result;
+                document.getElementById('text').innerHTML = contents;
+            }
+            reader.readAsText(f);
+        }
+    }
+
+</script>
+

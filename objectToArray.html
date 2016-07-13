@@ -1,0 +1,61 @@
+<!--Convert an object with array data to an array of objects-->
+
+<h1>Convert Objects to Arrays</h1>
+<ul>
+    <li>Use console to see results</li>
+    <li>Select getChartsMartyAlerts1.json as data </li>
+    <li>Call convertObjectTorArray(); to see array created from object</li>
+    <li>Call convertObjectTorArraySimplified(); to see array created using same approach but simplified syntax</li>
+
+</ul>
+
+<h2>Select json/getChartsMartyAlerts1.json</h2>
+<input type="file" id="input">
+
+<script>
+    document.getElementById('input').addEventListener('change', readSingleFile, false);
+    var chartObject = null;
+    var objectOfInterest = null;
+
+    //Create an objectOfInterest from json data read in as a file
+    function readSingleFile(evt) {
+        var f = evt.target.files[0];
+        if (f) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                chartObject = JSON.parse(e.target.result);
+                console.log("done reading json");
+                objectOfInterest = chartObject.scatter_currency.series;
+                console.log("object of interest is scatter_currency.series ", objectOfInterest);
+            };
+            reader.readAsText(f);
+        }
+    }
+
+
+    //function chaining, using d3 style syntax
+    function convertObjectToArray(){
+        return Object.keys(objectOfInterest).filter(function(d){return d != "category_field";}).map(function(key){
+            return {key:key, value: objectOfInterest[key]};
+        });
+    }
+    //More explicit syntax to show what's happening
+    function convertObjectToArraySimplified(){
+        var listOfKeys = Object.keys(objectOfInterest);
+        var keysWithoutCategories = listOfKeys.filter(function(d){return d != "category_field";});
+        var arrayOfObjects = keysWithoutCategories.map(function(key){
+            return {key:key, value: objectOfInterest[key]};
+        });
+        return {
+            listOfKeys: listOfKeys,
+            keysWithoutCategories:keysWithoutCategories,
+            arrayOfObjects: arrayOfObjects
+        };
+    }
+    function convertObjectToArrayDoesntWork(){
+        //doesn't work, because map is not defined on objects
+        //arrayOfInterest = objectOfInterest.map(function(value){return [value]; })
+    }
+
+</script>
+

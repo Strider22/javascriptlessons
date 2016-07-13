@@ -59,6 +59,32 @@
 
     document.write("T/F - every item is not equal to March =>" + result + "<br>");
 
+
+
+    /***************************************************************
+     *
+     *                          FIND
+     *
+     ***************************************************************/
+    document.write("<br>find <br>");
+    result = months.find(function(item){
+        if(item === 'March'){
+            return true;
+        }
+        return false;
+    });
+
+    document.write("T/F - find item is March =>" + result + "<br>");
+
+    result = months.find(function(item){
+        if(item === 'August'){
+            return true;
+        }
+        return false;
+    });
+
+    document.write("T/F - find item is August =>" + result + "<br>");
+
     /***************************************************************
      *
      *                          some

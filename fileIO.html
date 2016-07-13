@@ -1,44 +1,29 @@
+<!--Doesn't seem to work. See fileSelectAndRead.html-->
+
+
+
+
+
 <!-- https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications -->
 <!-- http://www.htmlgoodies.com/beyond/javascript/read-text-files-using-the-javascript-filereader.html#fbid=ybig3uW2q-k -->
-<h1>File I/O</h1>
-Simple example access a local file in javascript.<br>
-<!--<input type="file" id="input" onchange="showFileName();">-->
 
-<input type="file" id="input">
-<span> Filename: </span>
-<span id="filename">MyFile</span>
-<br>
+<h1>File I/O</h1>
+
+<h1>Text of Galatians1.txt</h1>
 <div id="text"></div>
-<span><br></span>
 
 
 <script>
-    if (window.File && window.FileReader && window.FileList && window.Blob) {
-        document.write("File APIs are suppported <br>");
-    } else {
-        alert('The File APIs are not fully supported by your browser.');
-    }
 
-    document.getElementById('input').addEventListener('change', readSingleFile, false);
-
-    function readSingleFile(evt) {
-        var f = evt.target.files[0];
-        if (f) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                var contents = e.target.result;
-                document.getElementById('text').innerHTML = contents;
-            }
-            reader.readAsText(f);
+    var f = new File([""],"C:\\Research\\javascript\\Gaatians1.txt");
+    if (f) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var contents = e.target.result;
+            document.getElementById('text').innerHTML = contents;
         }
+        reader.readAsText(f);
     }
-
-    function showFileName() {
-        var selectedFile = document.getElementById('input').files[0];
-        document.getElementById('filename').innerHTML = selectedFile.name;
-    }
-
-
 
 </script>
 
